@@ -67,11 +67,3 @@ p {
 .row {
   width: 80%;
 }
-
-footer {
-  background-color: black;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  color: white;
-}

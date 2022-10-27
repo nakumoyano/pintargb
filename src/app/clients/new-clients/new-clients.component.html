@@ -1,0 +1,87 @@
+<app-sidebar></app-sidebar>
+<div id="content">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div
+              class="col-sm-6 p-0 d-flex justify-content-lg-start justify-content-center"
+            >
+              <h2 class="ml-lg-12">Nuevo Cliente</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------- -->
+        <!-- -------------------------------- FORMULARIO ------------------------------------ -->
+
+        <form>
+          <h2>Datos Cliente</h2>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nombre:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Ingrese el nombre del cliente"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail2">Apellido:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail2"
+              aria-describedby="emailHelp"
+              placeholder="Ingrese el apellido del cliente"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3">Fecha de Nacimiento:</label>
+            <input
+              type="date"
+              class="form-control"
+              id="exampleInputEmail3"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputGroupSelect01">Tipo de Documento:</label>
+            <select class="custom-select" id="inputGroupSelect01">
+              <option selected>Seleccionar...</option>
+              <option value="1">DNI</option>
+              <option value="2">Pasaporte</option>
+              <option value="3">Libreta Cívica</option>
+              <option value="4">Libreta de Enrolamiento</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail4">CUIT/CUIL:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="exampleInputEmail4"
+              aria-describedby="emailHelp"
+              placeholder="Ingrese el número de CUIT/CUIL"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail5">N° Documento:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="exampleInputEmail5"
+              aria-describedby="emailHelp"
+              placeholder="Ingrese el número de documento"
+            />
+          </div>
+        </form>
+        <button type="button" class="btn btn-success mb-3">
+          Cargar cliente
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
