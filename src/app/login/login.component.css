@@ -19,7 +19,7 @@
 }
 
 .img {
-  width: 80px;
+  width: 120px;
   align-items: center;
   justify-content: center;
 }
@@ -36,5 +36,10 @@
 }
 
 .section {
-  margin-top: 10rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.text {
+  color: black;
 }

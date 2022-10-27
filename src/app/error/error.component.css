@@ -1,0 +1,37 @@
+.img-error {
+  width: 50%;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-error {
+  color: #000;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.btn-error {
+  padding: 13px 30px;
+  border-radius: 15px;
+  border: none;
+  background: rgb(9, 124, 231);
+  color: white;
+}
+
+.btn-error:hover {
+  cursor: pointer;
+  background: rgb(40, 142, 238);
+}
+
+@media screen and (max-width: 630px) {
+  h1 {
+    font-size: 16px;
+  }
+}

@@ -3,13 +3,20 @@
     <img src="../assets/titleWhite.png" class="img-fluid" />
   </div>
   <ul class="list-unstyled components">
+    <li class="desactive pt-2">
+      <span class="mi-cuenta">Mi cuenta</span>
+    </li>
+
     <li class="desactive">
       <a
         href=""
+        data-toggle="collapse"
+        aria-expanded="false"
         class="d-flex"
-        routerLink="/dashboard"
+        routerLink=""
         routerLinkActive="active"
-        ><i class="fa-solid fa-chart-simple"></i>Dashboard</a
+        ><i class="fa-solid fa-chart-simple pl-1"></i
+        ><span class="">Estadísticas</span></a
       >
     </li>
 
@@ -20,13 +27,13 @@
         aria-expanded="false"
         class="dropdown-toggle d-flex"
       >
-        <i class="fa-solid fa-users"></i>Clientes</a
-      >
+        <i class="fa-solid fa-users"></i><span class="enlace">Clientes </span>
+      </a>
       <ul class="collapse list-unstyled menu pl-3" id="homeSubmenu1">
         <li>
           <a
             href=""
-            class="d-flex"
+            class="d-flex enlace"
             routerLink="/nuevo-cliente"
             routerLinkActive="active"
             ><i class="fa-solid fa-user-plus"></i>Nuevo Cliente</a
@@ -35,7 +42,7 @@
         <li>
           <a
             href=""
-            class="d-flex"
+            class="d-flex enlace"
             routerLink="/listado-clientes"
             routerLinkActive="active"
             ><i class="fa-solid fa-list"></i>Listado de Clientes</a
@@ -48,7 +55,7 @@
         href="#homeSubmenu2"
         data-toggle="collapse"
         aria-expanded="false"
-        class="dropdown-toggle d-flex"
+        class="dropdown-toggle d-flex enlace"
       >
         <i class="fa-solid fa-users"></i>Empleados</a
       >
@@ -56,7 +63,7 @@
         <li>
           <a
             href=""
-            class="d-flex"
+            class="d-flex enlace"
             routerLink="/nuevo-empleado"
             routerLinkActive="active"
             ><i class="fa-solid fa-user-plus"></i>Nuevo Empleado</a
@@ -65,7 +72,7 @@
         <li>
           <a
             href=""
-            class="d-flex"
+            class="d-flex enlace"
             routerLink="/listado-empleados"
             routerLinkActive="active"
             ><i class="fa-solid fa-list"></i>Listado de Empleados</a
@@ -73,10 +80,12 @@
         </li>
       </ul>
     </li>
+    <hr class="hr-sidebar" />
     <li class="dropdown">
-      <a class="d-flex a-salir" (click)="logout()">
+      <a class="d-flex a-salir enlace" (click)="logout()">
         <i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesión</a
       >
     </li>
+    <hr class="hr-sidebar" />
   </ul>
 </nav>

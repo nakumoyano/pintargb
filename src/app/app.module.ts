@@ -14,6 +14,8 @@ import { ClientsListComponent } from './clients/clients-list/clients-list.compon
 import { LoginComponent } from './login/login.component';
 import { CookieService } from 'ngx-cookie-service';
 import { LoginService } from './login/login.service';
+import { LoginGuardian } from './login/login-guardian';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +27,10 @@ import { LoginService } from './login/login.service';
     FooterComponent,
     ClientsListComponent,
     LoginComponent,
+    ErrorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
-  providers: [LoginService, CookieService],
+  providers: [LoginService, CookieService, LoginGuardian],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

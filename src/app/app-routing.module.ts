@@ -5,17 +5,35 @@ import { NewClientsComponent } from './clients/new-clients/new-clients.component
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 import { NewEmployeeComponent } from './employees/new-employee/new-employee.component';
+import { ErrorComponent } from './error/error.component';
+import { LoginGuardian } from './login/login-guardian';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'nuevo-cliente', component: NewClientsComponent },
-  { path: 'listado-clientes', component: ClientsListComponent },
-  { path: 'nuevo-empleado', component: NewEmployeeComponent },
-  { path: 'listado-empleados', component: EmployeeListComponent },
+  {
+    path: 'nuevo-cliente',
+    component: NewClientsComponent,
+    canActivate: [LoginGuardian],
+  },
+  {
+    path: 'listado-clientes',
+    component: ClientsListComponent,
+    canActivate: [LoginGuardian],
+  },
+  {
+    path: 'nuevo-empleado',
+    component: NewEmployeeComponent,
+    canActivate: [LoginGuardian],
+  },
+  {
+    path: 'listado-empleados',
+    component: EmployeeListComponent,
+    canActivate: [LoginGuardian],
+  },
   // {path:"dashboard",component: DashboardComponent}
   // { path: 'home', component: SidebarComponent },
-  // {path:'**',component:ErrorComponent},
+  { path: '**', component: ErrorComponent },
 ];
 
 @NgModule({

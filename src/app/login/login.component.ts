@@ -19,4 +19,13 @@ export class LoginComponent implements OnInit {
 
     this.loginService.login(email, password);
   }
+
+  estaLogueado() {
+    return this.loginService.estaLogueado();
+  }
+
+  getIdToken() {
+    return this.loginService.getIdToken();
+    alert('no existe');
+  }
 }
