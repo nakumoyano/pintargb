@@ -17,7 +17,13 @@ export class LoginComponent implements OnInit {
 
     const password = form.value.password;
 
+    localStorage.setItem('token', '');
+    form.value.email == 'empleado@pintargb.com'
+      ? localStorage.setItem('userType', 'employee')
+      : localStorage.setItem('userType', 'admin');
+
     this.loginService.login(email, password);
+    // this.loginService.login(email, password);
   }
 
   estaLogueado() {
@@ -26,6 +32,5 @@ export class LoginComponent implements OnInit {
 
   getIdToken() {
     return this.loginService.getIdToken();
-    alert('no existe');
   }
 }

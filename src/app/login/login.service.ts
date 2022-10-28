@@ -43,6 +43,7 @@ export class LoginService {
       .then(() => {
         this.token = '';
         this.cookies.set('token', this.token);
+        confirm('¿Seguro que desea salir?');
         this.router.navigate(['/']);
       });
   }

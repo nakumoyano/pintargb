@@ -12,8 +12,11 @@ import { Component1Component } from './components/component1/component1.componen
 import { Component2Component } from './components/component2/component2.component';
 import { AuthGuardGuard } from './core/guards/auth-guard.guard';
 import { RoleGuardGuard } from './core/guards/role-guard.guard';
+import { RoleGuard } from './services/role.guard';
+import { RolesGuard } from './login/roles.guard';
 const routes: Routes = [
   { path: '', component: LoginComponent },
+
   {
     path: 'nuevo-cliente',
     component: NewClientsComponent,
@@ -27,12 +30,12 @@ const routes: Routes = [
   {
     path: 'nuevo-empleado',
     component: NewEmployeeComponent,
-    canActivate: [LoginGuardian],
+    canActivate: [LoginGuardian, RolesGuard],
   },
   {
     path: 'listado-empleados',
     component: EmployeeListComponent,
-    canActivate: [LoginGuardian],
+    canActivate: [LoginGuardian, RolesGuard],
   },
 
   // --------------------------- CURSO YUTU
@@ -49,6 +52,7 @@ const routes: Routes = [
   //   component: Component2Component,
   //   canActivate: [AuthGuardGuard, RoleGuardGuard],
   // },
+  // {path:"user",loadChildren:()=>}
   // --------------------------------
 
   { path: '**', component: ErrorComponent },
