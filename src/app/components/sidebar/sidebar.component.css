@@ -118,7 +118,7 @@ a:focus {
   left: 0;
   bottom: 0;
   z-index: 11;
-  width: 260px;
+  width: 240px;
   overflow: auto;
   transition: all 0.3s;
   background-color: #000;
@@ -227,7 +227,7 @@ a:focus {
 #sidebar ul li a {
   padding: 5px 10px 5px 20px;
   line-height: 30px;
-  font-size: 16px;
+  font-size: 14px;
   position: relative;
   font-weight: 400;
   display: block;
@@ -259,7 +259,7 @@ a:focus {
 
 .mi-cuenta {
   color: rgb(69, 103, 214);
-  font-size: 25px;
+  font-size: 18px;
   font-weight: bold;
   padding-left: 20px;
 }

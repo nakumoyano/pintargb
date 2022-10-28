@@ -7,7 +7,7 @@
       <span class="mi-cuenta">Mi cuenta</span>
     </li>
 
-    <li class="desactive">
+    <!-- <li class="desactive">
       <a
         href=""
         data-toggle="collapse"
@@ -18,8 +18,39 @@
         ><i class="fa-solid fa-chart-simple pl-1"></i
         ><span class="">Estadísticas</span></a
       >
-    </li>
+    </li> -->
 
+    <li class="dropdown">
+      <a
+        href="#homeSubmenu0"
+        data-toggle="collapse"
+        aria-expanded="false"
+        class="dropdown-toggle d-flex"
+      >
+        <i class="fa-solid fa-boxes-packing"></i
+        ><span class="enlace">Productos </span>
+      </a>
+      <ul class="collapse list-unstyled menu pl-3" id="homeSubmenu0">
+        <li>
+          <a
+            href=""
+            class="d-flex enlace"
+            routerLink="/nuevo-cliente"
+            routerLinkActive="active"
+            ><i class="fa-solid fa-user-plus"></i>Nuevo Producto</a
+          >
+        </li>
+        <li>
+          <a
+            href=""
+            class="d-flex enlace"
+            routerLink="/listado-clientes"
+            routerLinkActive="active"
+            ><i class="fa-solid fa-list"></i>Listado de Productos</a
+          >
+        </li>
+      </ul>
+    </li>
     <li class="dropdown">
       <a
         href="#homeSubmenu1"
@@ -27,7 +58,7 @@
         aria-expanded="false"
         class="dropdown-toggle d-flex"
       >
-        <i class="fa-solid fa-users"></i><span class="enlace">Clientes </span>
+        <i class="fa-solid fa-user"></i><span class="enlace">Clientes </span>
       </a>
       <ul class="collapse list-unstyled menu pl-3" id="homeSubmenu1">
         <li>
@@ -57,7 +88,8 @@
         aria-expanded="false"
         class="dropdown-toggle d-flex enlace"
       >
-        <i class="fa-solid fa-users"></i>Empleados</a
+        <!-- <i class="fa-solid fa-users"></i>Empleados</a -->
+        <i class="fa-solid fa-user-tie"></i>Empleados</a
       >
       <ul class="collapse list-unstyled menu pl-3" id="homeSubmenu2">
         <li>
@@ -79,6 +111,23 @@
           >
         </li>
       </ul>
+    </li>
+    <hr class="hr-sidebar" />
+    <li class="desactive pt-2">
+      <span class="mi-cuenta">Servicios</span>
+    </li>
+
+    <li class="desactive">
+      <a
+        href=""
+        data-toggle="collapse"
+        aria-expanded="false"
+        class="d-flex"
+        routerLink=""
+        routerLinkActive="active"
+        ><i class="fa-solid fa-chart-simple pl-1"></i
+        ><span class="">Estadísticas</span></a
+      >
     </li>
     <hr class="hr-sidebar" />
     <li class="dropdown">

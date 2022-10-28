@@ -8,7 +8,10 @@ import { NewEmployeeComponent } from './employees/new-employee/new-employee.comp
 import { ErrorComponent } from './error/error.component';
 import { LoginGuardian } from './login/login-guardian';
 import { LoginComponent } from './login/login.component';
-
+import { Component1Component } from './components/component1/component1.component';
+import { Component2Component } from './components/component2/component2.component';
+import { AuthGuardGuard } from './core/guards/auth-guard.guard';
+import { RoleGuardGuard } from './core/guards/role-guard.guard';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   {
@@ -31,8 +34,23 @@ const routes: Routes = [
     component: EmployeeListComponent,
     canActivate: [LoginGuardian],
   },
-  // {path:"dashboard",component: DashboardComponent}
-  // { path: 'home', component: SidebarComponent },
+
+  // --------------------------- CURSO YUTU
+  // {
+  //   path: 'component1',
+  //   component: Component1Component,
+  //   canActivate: [AuthGuardGuard, RoleGuardGuard],
+  //   data: {
+  //     expectedRoles: ['Editor'],
+  //   },
+  // },
+  // {
+  //   path: 'component2',
+  //   component: Component2Component,
+  //   canActivate: [AuthGuardGuard, RoleGuardGuard],
+  // },
+  // --------------------------------
+
   { path: '**', component: ErrorComponent },
 ];
 

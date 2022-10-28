@@ -16,6 +16,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { LoginService } from './login/login.service';
 import { LoginGuardian } from './login/login-guardian';
 import { ErrorComponent } from './error/error.component';
+import { Component1Component } from './components/component1/component1.component';
+import { Component2Component } from './components/component2/component2.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { ErrorComponent } from './error/error.component';
     ClientsListComponent,
     LoginComponent,
     ErrorComponent,
+    Component1Component,
+    Component2Component,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [LoginService, CookieService, LoginGuardian],
