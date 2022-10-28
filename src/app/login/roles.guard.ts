@@ -6,6 +6,7 @@ import {
   UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,14 @@ export class RolesGuard implements CanActivate {
     if (Role === 'admin') {
       return true;
     }
-    alert('No tienes el rol de admin!');
+    // alert('No tienes el rol de admin!');
+    Swal.fire({
+      title: 'No tienes el rol de administrador!',
+      background: 'white',
+      color: 'black',
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'Aceptar',
+    });
     return false;
   }
 }

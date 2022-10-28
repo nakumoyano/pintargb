@@ -16,7 +16,6 @@ import { RoleGuard } from './services/role.guard';
 import { RolesGuard } from './login/roles.guard';
 const routes: Routes = [
   { path: '', component: LoginComponent },
-
   {
     path: 'nuevo-cliente',
     component: NewClientsComponent,
@@ -37,24 +36,6 @@ const routes: Routes = [
     component: EmployeeListComponent,
     canActivate: [LoginGuardian, RolesGuard],
   },
-
-  // --------------------------- CURSO YUTU
-  // {
-  //   path: 'component1',
-  //   component: Component1Component,
-  //   canActivate: [AuthGuardGuard, RoleGuardGuard],
-  //   data: {
-  //     expectedRoles: ['Editor'],
-  //   },
-  // },
-  // {
-  //   path: 'component2',
-  //   component: Component2Component,
-  //   canActivate: [AuthGuardGuard, RoleGuardGuard],
-  // },
-  // {path:"user",loadChildren:()=>}
-  // --------------------------------
-
   { path: '**', component: ErrorComponent },
 ];
 

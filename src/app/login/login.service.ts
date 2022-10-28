@@ -12,6 +12,8 @@ export class LoginService {
 
   token: string;
 
+  dataUser: any;
+
   login(email: string, password: string) {
     firebase
       .auth()
@@ -43,7 +45,8 @@ export class LoginService {
       .then(() => {
         this.token = '';
         this.cookies.set('token', this.token);
-        confirm('¿Seguro que desea salir?');
+        // confirm('¿Seguro que desea salir?');
+        location.reload();
         this.router.navigate(['/']);
       });
   }

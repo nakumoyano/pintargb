@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { LoginService } from './login.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -21,6 +22,14 @@ export class LoginComponent implements OnInit {
     form.value.email == 'empleado@pintargb.com'
       ? localStorage.setItem('userType', 'employee')
       : localStorage.setItem('userType', 'admin');
+
+    Swal.fire({
+      title: 'Bienvenido ' + email,
+      background: 'white',
+      color: 'black',
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'Aceptar',
+    });
 
     this.loginService.login(email, password);
     // this.loginService.login(email, password);

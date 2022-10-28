@@ -6,19 +6,9 @@
     <li class="desactive pt-2">
       <span class="mi-cuenta">Mi cuenta</span>
     </li>
+    <!-- <p>bievenido {{data}}</p> -->
 
-    <!-- <li class="desactive">
-      <a
-        href=""
-        data-toggle="collapse"
-        aria-expanded="false"
-        class="d-flex"
-        routerLink=""
-        routerLinkActive="active"
-        ><i class="fa-solid fa-chart-simple pl-1"></i
-        ><span class="">Estadísticas</span></a
-      >
-    </li> -->
+    <!-- ------------------------------ PRODUCTOS -->
 
     <li class="dropdown">
       <a
@@ -51,6 +41,8 @@
         </li>
       </ul>
     </li>
+
+    <!-- ------------------------------------ COMPRAS -->
     <li class="dropdown">
       <a
         href="#homeSubmenu1"
@@ -58,9 +50,51 @@
         aria-expanded="false"
         class="dropdown-toggle d-flex"
       >
-        <i class="fa-solid fa-user"></i><span class="enlace">Clientes </span>
+        <i class="fa-solid fa-cart-shopping"></i
+        ><span class="enlace">Compras </span>
       </a>
       <ul class="collapse list-unstyled menu pl-3" id="homeSubmenu1">
+        <li>
+          <a
+            href=""
+            class="d-flex enlace"
+            routerLink="/nuevo-cliente"
+            routerLinkActive="active"
+            ><i class="fa-sharp fa-solid fa-credit-card"></i>Nueva Compra</a
+          >
+        </li>
+        <li>
+          <a
+            href=""
+            class="d-flex enlace"
+            routerLink="/listado-clientes"
+            routerLinkActive="active"
+            ><i class="fa-solid fa-list"></i>Compras por hacer</a
+          >
+        </li>
+        <li>
+          <a
+            href=""
+            class="d-flex enlace"
+            routerLink="/listado-clientes"
+            routerLinkActive="active"
+            ><i class="fa-solid fa-user"></i>Datos proveedor</a
+          >
+        </li>
+      </ul>
+    </li>
+
+    <!-- ------------------------- CLIENTES -->
+    <li class="dropdown">
+      <a
+        href="#homeSubmenu2"
+        data-toggle="collapse"
+        aria-expanded="false"
+        class="dropdown-toggle d-flex"
+      >
+        <i class="fa-solid fa-user"></i><span class="enlace">Clientes </span>
+      </a>
+      <ul class="collapse list-unstyled menu pl-3" id="homeSubmenu2">
         <li>
           <a
             href=""
@@ -81,9 +115,11 @@
         </li>
       </ul>
     </li>
+
+    <!-- ------------------------------- EMPLEADOS -->
     <li class="dropdown">
       <a
-        href="#homeSubmenu2"
+        href="#homeSubmenu3"
         data-toggle="collapse"
         aria-expanded="false"
         class="dropdown-toggle d-flex enlace"
@@ -91,7 +127,7 @@
         <!-- <i class="fa-solid fa-users"></i>Empleados</a -->
         <i class="fa-solid fa-user-tie"></i>Empleados</a
       >
-      <ul class="collapse list-unstyled menu pl-3" id="homeSubmenu2">
+      <ul class="collapse list-unstyled menu pl-3" id="homeSubmenu3">
         <li>
           <a
             href=""
@@ -112,10 +148,15 @@
         </li>
       </ul>
     </li>
+
     <hr class="hr-sidebar" />
+
+    <!-- --------------------------------------- SERVICIOS -------------------------------------- -->
     <li class="desactive pt-2">
       <span class="mi-cuenta">Servicios</span>
     </li>
+
+    <!-- --------------------------- ESTADISTICAS -->
 
     <li class="desactive">
       <a
@@ -130,11 +171,43 @@
       >
     </li>
     <hr class="hr-sidebar" />
-    <li class="dropdown">
-      <a class="d-flex a-salir enlace" (click)="logout()">
+    <li class="">
+      <a class="d-flex a-salir enlace" href="#cerrarSesion" data-toggle="modal">
+        <!-- <a class="d-flex a-salir enlace" (click)="logout()"> -->
         <i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesión</a
       >
     </li>
     <hr class="hr-sidebar" />
   </ul>
 </nav>
+
+<!-- --------------------------------------- MODAL ----------------------------------->
+
+<!-- modal cerrar sesion -->
+<div id="cerrarSesion" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <p class="modal-title">¿Está seguro que desea cerrar sesión?</p>
+        </div>
+        <div class="modal-footer">
+          <input
+            type="button"
+            class="btn btn-danger"
+            data-dismiss="modal"
+            value="Cancelar"
+          />
+          <input
+            type="submit"
+            class="btn btn-success"
+            value="Aceptar"
+            (click)="logout()"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- modal no tienes permiso de admin -->
