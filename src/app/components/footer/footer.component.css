@@ -1,0 +1,69 @@
+/* --------------------------------------- footer ---------------------------- */
+.codertech {
+  color: #e6cc05;
+}
+
+.codertech:hover {
+  color: #e6cc05;
+}
+
+.page-footer {
+  background-color: #000;
+}
+
+.fas {
+  cursor: pointer;
+}
+
+.fas:hover,
+.fab:hover {
+  color: #e6cc05 !important;
+}
+
+.a-icons {
+  color: white;
+}
+
+.a-icons:hover {
+  text-decoration: none;
+  color: #b6bcc9;
+}
+
+.icon-insta:hover {
+  color: rgb(219, 52, 80);
+}
+
+.icon-face:hover {
+  color: rgb(15, 29, 228);
+}
+
+p {
+  font-size: 15px;
+  margin: 12px 0 0;
+  line-height: 24px;
+}
+
+/*=========sidebar---design------*/
+
+@media only screen and (min-width: 992px) {
+  #content {
+    width: calc(100% - 150px);
+    position: relative;
+    float: right;
+    transition: all 0.3s;
+  }
+
+  #content.active {
+    width: 100%;
+  }
+}
+
+#content {
+  position: relative;
+  transition: all 0.5s;
+  background-attachment: #f9fafc;
+}
+
+.row {
+  width: 80%;
+}
