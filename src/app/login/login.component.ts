@@ -9,6 +9,9 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  visible: boolean = true;
+  changetype: boolean = true;
+
   constructor(private loginService: LoginService) {}
 
   ngOnInit(): void {}
@@ -40,5 +43,10 @@ export class LoginComponent implements OnInit {
 
   getIdToken() {
     return this.loginService.getIdToken();
+  }
+
+  viewpass() {
+    this.visible = !this.visible;
+    this.changetype = !this.changetype;
   }
 }

@@ -31,4 +31,11 @@ export class SidebarComponent implements OnInit {
   dataUser() {
     return this.loginService.dataUser();
   }
+
+  // controlarUsuario(){
+
+  // let Role = localStorage.getItem("userType");
+  // if (Role !== "admin") {
+  //   document.getElementById("idEmpleados").style.display = "none";
+  // }}
 }
