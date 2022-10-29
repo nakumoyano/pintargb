@@ -5,14 +5,13 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 
 import { CookieService } from 'ngx-cookie-service';
+import Swal from 'sweetalert2';
 
 @Injectable()
 export class LoginService {
   constructor(private router: Router, private cookies: CookieService) {}
 
   token: string;
-
-  dataUser: any;
 
   login(email: string, password: string) {
     firebase
@@ -25,7 +24,14 @@ export class LoginService {
           .then((token) => {
             this.token = token;
             this.cookies.set('token', this.token);
-            this.router.navigate(['/nuevo-cliente']);
+            Swal.fire({
+              title: 'Bienvenido ' + email,
+              background: 'white',
+              color: 'black',
+              confirmButtonColor: '#3085d6',
+              confirmButtonText: 'Aceptar',
+            });
+            this.router.navigate(['/estadisticas']);
           });
       });
   }

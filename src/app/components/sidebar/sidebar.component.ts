@@ -9,15 +9,19 @@ import Swal from 'sweetalert2';
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
+  visible: boolean = false;
+
   constructor(
     private loginService: LoginService,
     private rolGuard: RolesGuard
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.controlarUsuario();
+  }
 
   logout() {
-    return this.loginService.logout();
+    this.loginService.logout();
   }
 
   estaLogueado() {
@@ -28,14 +32,11 @@ export class SidebarComponent implements OnInit {
     location.reload();
   }
 
-  dataUser() {
-    return this.loginService.dataUser();
+  controlarUsuario() {
+    let Role = localStorage.getItem('userType');
+    if (Role === 'employee') {
+      return (this.visible = !this.visible);
+    }
+    return false;
   }
-
-  // controlarUsuario(){
-
-  // let Role = localStorage.getItem("userType");
-  // if (Role !== "admin") {
-  //   document.getElementById("idEmpleados").style.display = "none";
-  // }}
 }

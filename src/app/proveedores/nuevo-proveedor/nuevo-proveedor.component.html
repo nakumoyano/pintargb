@@ -1,5 +1,4 @@
 <app-sidebar></app-sidebar>
-<app-navbar></app-navbar>
 <div id="content">
   <div class="row">
     <div class="col-lg-10 col-md-12 mx-auto">
@@ -9,7 +8,7 @@
             <div
               class="col-sm-6 p-0 d-flex justify-content-lg-start justify-content-center"
             >
-              <h2 class="ml-lg-12">Nuevo Cliente</h2>
+              <h2 class="ml-lg-12">Nuevo Proveedor</h2>
             </div>
           </div>
         </div>
@@ -18,17 +17,16 @@
         <!-- -------------------------------- FORMULARIO ------------------------------------ -->
 
         <form>
-          <h2>Datos Cliente</h2>
+          <h2>Datos Proveedor</h2>
           <hr />
           <div class="form-group">
-            <label for="inputNombre">Nombre:</label>
+            <label for="exampleInputEmail1">Nombre:</label>
             <input
               type="text"
               class="form-control"
-              id="inputNombre"
-              name="name"
-              placeholder="Ingrese el nombre del cliente"
-              [(ngModel)]="cliente.nombre"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Ingrese el nombre del proveedor"
             />
           </div>
           <div class="form-group">
@@ -38,59 +36,49 @@
               class="form-control"
               id="exampleInputEmail2"
               aria-describedby="emailHelp"
-              placeholder="Ingrese el apellido del cliente"
-              name="apellido"
+              placeholder="Ingrese el apellido del proveedor"
             />
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail3">N° Documento:</label>
-            <input
-              type="number"
-              class="form-control"
-              id="exampleInputEmail3"
-              aria-describedby="emailHelp"
-              placeholder="Ingrese el número de documento"
-              name="dni"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail4">Email:</label>
+            <label for="exampleInputEmail3">Email:</label>
             <input
               type="email"
               class="form-control"
-              id="exampleInputEmail4"
+              id="exampleInputEmail3"
               aria-describedby="emailHelp"
-              placeholder="Ingrese el email del cliente"
-              name="mail"
-              [(ngModel)]="cliente.mail"
+              placeholder="Ingrese el email del proveedor"
             />
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail5">Teléfono:</label>
+            <label for="exampleInputEmail4">Teléfono:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail4"
+              aria-describedby="emailHelp"
+              placeholder="Ingrese el teléfono del cliente"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail5">Dirección:</label>
             <input
               type="text"
               class="form-control"
               id="exampleInputEmail5"
               aria-describedby="emailHelp"
-              placeholder="Ingrese el teléfono del cliente"
-              name="telefono"
-              [(ngModel)]="cliente.telefono"
+              placeholder="Ingrese la dirección del cliente"
             />
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail6">Dirección:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleInputEmail6"
-              aria-describedby="emailHelp"
-              placeholder="Ingrese la dirección del cliente"
-              name="direccion"
-              [(ngModel)]="cliente.direccion"
-            />
+            <label for="exampleInputEmail6">Método de envío:</label>
+            <select class="custom-select" id="exampleInputEmail6">
+              <option selected>Seleccionar...</option>
+              <option value="1">Correo</option>
+              <option value="2">Envío privado</option>
+            </select>
           </div>
         </form>
-        <button type="button" class="btn btn-success mb-3" (click)="agregar()">
+        <button type="button" class="btn btn-success mb-3">
           Cargar cliente
         </button>
       </div>

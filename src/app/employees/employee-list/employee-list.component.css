@@ -115,6 +115,7 @@ a:focus {
 #content {
   position: relative;
   transition: all 0.5s;
+  margin-top: 10px;
   background-attachment: #f9fafc;
 }
 

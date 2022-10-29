@@ -1,4 +1,6 @@
 <app-sidebar></app-sidebar>
+<app-navbar></app-navbar>
+
 <div id="content">
   <div class="row">
     <div class="col-lg-10 col-md-12 mx-auto">
@@ -40,42 +42,51 @@
             />
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail3">Fecha de Nacimiento:</label>
-            <input
-              type="date"
-              class="form-control"
-              id="exampleInputEmail3"
-              aria-describedby="emailHelp"
-            />
-          </div>
-          <div class="form-group">
-            <label for="inputGroupSelect01">Tipo de Documento:</label>
-            <select class="custom-select" id="inputGroupSelect01">
-              <option selected>Seleccionar...</option>
-              <option value="1">DNI</option>
-              <option value="2">Pasaporte</option>
-              <option value="3">Libreta Cívica</option>
-              <option value="4">Libreta de Enrolamiento</option>
+            <label for="exampleInputEmail3">Rol del empleado:</label>
+            <select class="custom-select" id="exampleInputEmail3">
+              <option selected>Seleccionar rol...</option>
+              <option value="1">Vendedor</option>
+              <option value="2">Control de depósito</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail4">CUIT/CUIL:</label>
+            <label for="exampleInputEmail4">N° Documento:</label>
             <input
               type="number"
               class="form-control"
               id="exampleInputEmail4"
               aria-describedby="emailHelp"
-              placeholder="Ingrese el número de CUIT/CUIL"
+              placeholder="Ingrese el número de documento"
             />
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail5">N° Documento:</label>
+            <label for="exampleInputEmail5">Email:</label>
             <input
-              type="number"
+              type="email"
               class="form-control"
               id="exampleInputEmail5"
               aria-describedby="emailHelp"
-              placeholder="Ingrese el número de documento"
+              placeholder="Ingrese el email del empleado"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail6">Teléfono:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail6"
+              aria-describedby="emailHelp"
+              placeholder="Ingrese el teléfono del empleado"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail7">Dirección:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail7"
+              aria-describedby="emailHelp"
+              placeholder="Ingrese la dirección del empleado"
             />
           </div>
           <button type="button" class="btn btn-success mb-3">

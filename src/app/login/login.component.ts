@@ -25,15 +25,6 @@ export class LoginComponent implements OnInit {
     form.value.email == 'empleado@pintargb.com'
       ? localStorage.setItem('userType', 'employee')
       : localStorage.setItem('userType', 'admin');
-
-    Swal.fire({
-      title: 'Bienvenido ' + email,
-      background: 'white',
-      color: 'black',
-      confirmButtonColor: '#3085d6',
-      confirmButtonText: 'Aceptar',
-    });
-
     this.loginService.login(email, password);
   }
 

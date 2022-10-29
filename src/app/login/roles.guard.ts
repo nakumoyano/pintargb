@@ -6,6 +6,8 @@ import Swal from 'sweetalert2';
   providedIn: 'root',
 })
 export class RolesGuard implements CanActivate {
+  visible: boolean = true;
+
   canActivate() {
     let Role = localStorage.getItem('userType');
     if (Role === 'admin') {

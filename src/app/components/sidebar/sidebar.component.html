@@ -3,10 +3,11 @@
     <img src="../assets/titleWhite.png" class="img-fluid" />
   </div>
   <ul class="list-unstyled components">
+    <!-- ------------------------------------- MI CUENTA ---------------------------- -->
+
     <li class="desactive pt-2">
       <span class="mi-cuenta">Mi cuenta</span>
     </li>
-    <!-- <p>bievenido {{data}}</p> -->
 
     <!-- ------------------------------ PRODUCTOS -->
 
@@ -18,14 +19,14 @@
         class="dropdown-toggle d-flex"
       >
         <i class="fa-solid fa-boxes-packing"></i
-        ><span class="enlace">Productos </span>
+        ><span class="enlace">Productos</span>
       </a>
       <ul class="collapse list-unstyled menu pl-3" id="homeSubmenu0">
         <li>
           <a
             href=""
             class="d-flex enlace"
-            routerLink="/nuevo-cliente"
+            routerLink="/nuevo-producto"
             routerLinkActive="active"
             ><i class="fa-solid fa-user-plus"></i>Nuevo Producto</a
           >
@@ -34,12 +35,130 @@
           <a
             href=""
             class="d-flex enlace"
-            routerLink="/listado-clientes"
+            routerLink="/listado-productos"
             routerLinkActive="active"
             ><i class="fa-solid fa-list"></i>Listado de Productos</a
           >
         </li>
       </ul>
+    </li>
+
+    <!-- ------------------------- CLIENTES -->
+    <li class="dropdown">
+      <a
+        href="#homeSubmenu2"
+        data-toggle="collapse"
+        aria-expanded="false"
+        class="dropdown-toggle d-flex"
+      >
+        <i class="fa-solid fa-user"></i><span class="enlace">Clientes </span>
+      </a>
+      <ul class="collapse list-unstyled menu pl-3" id="homeSubmenu2">
+        <li>
+          <a
+            href=""
+            class="d-flex enlace"
+            routerLink="/nuevo-cliente"
+            routerLinkActive="active"
+            ><i class="fa-solid fa-user-plus"></i>Nuevo Cliente</a
+          >
+        </li>
+        <li>
+          <a
+            href=""
+            class="d-flex enlace"
+            routerLink="/listado-clientes"
+            routerLinkActive="active"
+            ><i class="fa-solid fa-list"></i>Listado de Clientes</a
+          >
+        </li>
+      </ul>
+    </li>
+
+    <!-- ------------------------------- EMPLEADOS -->
+
+    <li class="dropdown" id="idEmpleados">
+      <a
+        href="#homeSubmenu3"
+        data-toggle="collapse"
+        aria-expanded="false"
+        [ngClass]="visible ? 'd-none' : 'dropdown-toggle d-flex enlace'"
+      >
+        <i class="fa-solid fa-user-tie"></i>Empleados</a
+      >
+      <ul class="collapse list-unstyled menu pl-3" id="homeSubmenu3">
+        <li>
+          <a
+            href=""
+            class="d-flex enlace"
+            routerLink="/nuevo-empleado"
+            routerLinkActive="active"
+            ><i class="fa-solid fa-user-plus"></i>Nuevo Empleado</a
+          >
+        </li>
+        <li>
+          <a
+            href=""
+            class="d-flex enlace"
+            routerLink="/listado-empleados"
+            routerLinkActive="active"
+            ><i class="fa-solid fa-list"></i>Listado de Empleados</a
+          >
+        </li>
+      </ul>
+    </li>
+
+    <!-- ---------------------------------- PROVEEDORES -->
+    <li class="dropdown">
+      <a
+        href="#homeSubmenu4"
+        data-toggle="collapse"
+        aria-expanded="false"
+        class="dropdown-toggle d-flex"
+      >
+        <i class="fa-solid fa-user-tie"></i>Proveedores</a
+      >
+      <ul class="collapse list-unstyled menu pl-3" id="homeSubmenu4">
+        <li>
+          <a
+            href=""
+            class="d-flex"
+            routerLink="/nuevo-proveedor"
+            routerLinkActive=""
+            ><i class="fa-solid fa-user-plus"></i>Nuevo Proveedor</a
+          >
+        </li>
+        <li>
+          <a
+            href=""
+            class="d-flex enlace"
+            routerLink="/listado-proveedores"
+            routerLinkActive="active"
+            ><i class="fa-solid fa-list"></i>Listado de Proveedores</a
+          >
+        </li>
+      </ul>
+    </li>
+    <hr class="hr-sidebar" />
+
+    <!-- --------------------------------------- SERVICIOS -------------------------------------- -->
+    <li class="desactive pt-2">
+      <span class="mi-cuenta">Servicios</span>
+    </li>
+
+    <!-- --------------------------- ESTADISTICAS -->
+
+    <li class="desactive">
+      <a
+        href=""
+        data-toggle="collapse"
+        aria-expanded="false"
+        [ngClass]="visible ? 'd-none' : 'd-flex'"
+        routerLink="/estadisticas"
+        routerLinkActive="active"
+        ><i class="fa-solid fa-chart-simple pl-1"></i
+        ><span class="enlace">Estadísticas</span></a
+      >
     </li>
 
     <!-- ------------------------------------ COMPRAS -->
@@ -84,83 +203,8 @@
       </ul>
     </li>
 
-    <!-- ------------------------- CLIENTES -->
-    <li class="dropdown">
-      <a
-        href="#homeSubmenu2"
-        data-toggle="collapse"
-        aria-expanded="false"
-        class="dropdown-toggle d-flex"
-      >
-        <i class="fa-solid fa-user"></i><span class="enlace">Clientes </span>
-      </a>
-      <ul class="collapse list-unstyled menu pl-3" id="homeSubmenu2">
-        <li>
-          <a
-            href=""
-            class="d-flex enlace"
-            routerLink="/nuevo-cliente"
-            routerLinkActive="active"
-            ><i class="fa-solid fa-user-plus"></i>Nuevo Cliente</a
-          >
-        </li>
-        <li>
-          <a
-            href=""
-            class="d-flex enlace"
-            routerLink="/listado-clientes"
-            routerLinkActive="active"
-            ><i class="fa-solid fa-list"></i>Listado de Clientes</a
-          >
-        </li>
-      </ul>
-    </li>
-
-    <!-- ------------------------------- EMPLEADOS -->
-
-    <li class="dropdown" id="idEmpleados">
-      <!-- <li class="dropdown" id="idEmpleados" (click)="controlarUsuario()"> -->
-      <a
-        href="#homeSubmenu3"
-        data-toggle="collapse"
-        aria-expanded="false"
-        class="dropdown-toggle d-flex enlace"
-      >
-        <!-- <i class="fa-solid fa-users"></i>Empleados</a -->
-        <i class="fa-solid fa-user-tie"></i>Empleados</a
-      >
-      <ul class="collapse list-unstyled menu pl-3" id="homeSubmenu3">
-        <li>
-          <a
-            href=""
-            class="d-flex enlace"
-            routerLink="/nuevo-empleado"
-            routerLinkActive="active"
-            ><i class="fa-solid fa-user-plus"></i>Nuevo Empleado</a
-          >
-        </li>
-        <li>
-          <a
-            href=""
-            class="d-flex enlace"
-            routerLink="/listado-empleados"
-            routerLinkActive="active"
-            ><i class="fa-solid fa-list"></i>Listado de Empleados</a
-          >
-        </li>
-      </ul>
-    </li>
-
-    <hr class="hr-sidebar" />
-
-    <!-- --------------------------------------- SERVICIOS -------------------------------------- -->
-    <li class="desactive pt-2">
-      <span class="mi-cuenta">Servicios</span>
-    </li>
-
-    <!-- --------------------------- ESTADISTICAS -->
-
-    <li class="desactive">
+    <!-- -------------------------------- AYUDA -->
+    <!-- <li class="desactive">
       <a
         href=""
         data-toggle="collapse"
@@ -168,11 +212,13 @@
         class="d-flex"
         routerLink=""
         routerLinkActive="active"
-        ><i class="fa-solid fa-chart-simple pl-1"></i
-        ><span class="">Estadísticas</span></a
+        ><i class="fa-solid fa-circle-info"></i><span class="">Ayuda</span></a
       >
-    </li>
+    </li> -->
+
     <hr class="hr-sidebar" />
+
+    <!-- ------------------------------------- CERRAR SESION -------------------------------- -->
     <li class="">
       <a class="d-flex a-salir enlace" href="#cerrarSesion" data-toggle="modal">
         <!-- <a class="d-flex a-salir enlace" (click)="logout()"> -->
