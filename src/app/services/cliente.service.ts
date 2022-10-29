@@ -7,13 +7,16 @@ import { Cliente } from '../models/cliente';
   providedIn: 'root',
 })
 export class ClienteService {
-  private API_URL: string =
-    'https://635c6a96f0bc26795bfe72b4.mockapi.io/Apiv2/Cliente';
+  private API_URL: string = 'http://localhost:3000/cliente';
 
   constructor(private http: HttpClient) {}
 
   obtener(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>(this.API_URL);
+  }
+
+  obtenerPorId(id: string): Observable<Cliente> {
+    return this.http.get<Cliente>(`${this.API_URL}/${id}`);
   }
 
   agregar(cliente: Cliente): Observable<Cliente> {
@@ -24,10 +27,15 @@ export class ClienteService {
     return this.http.put<Cliente>(`${this.API_URL}/${cliente.id}`, cliente);
   }
 
-  // eliminar(cliente: Cliente): Observable<any> {
-  //   return this.http.delete<Cliente>(`${this.API_URL}/${cliente.id}`);
-  // }
   eliminar(id: string): Observable<any> {
-    return this.http.delete(`${this.API_URL}/${id}`);
+    return this.http.delete<any>(`${this.API_URL}/${id}`);
   }
+
+  update(cliente: Cliente): Observable<Cliente> {
+    return this.http.put<Cliente>(this.API_URL, cliente);
+  }
+
+  // editar(cliente:Cliente):Observable<Cliente> {
+  //   return this.http.put<Cliente>(this.API_URL, cliente)
+  // }
 }

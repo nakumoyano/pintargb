@@ -1,0 +1,151 @@
+{
+  "ordenesCompra": [
+    {
+      "id": 1,
+      "proveedorId": 1,
+      "empleadoId": 1,
+      "tipoPago": "tipoPago 1",
+      "fechaCompra": 1667002497,
+      "total": 74,
+      "estado": "estado 1"
+    },
+    {
+      "id": 2,
+      "proveedorId": 2,
+      "empleadoId": 2,
+      "tipoPago": "tipoPago 2",
+      "fechaCompra": 1667002437,
+      "total": 75,
+      "estado": "estado 2"
+    }
+  ],
+  "detalleCompra": [
+    {
+      "id": 1,
+      "ordenesCompraId": 1,
+      "productoId": 1,
+      "cantidad": 27,
+      "precioCompra": 66
+    },
+    {
+      "id": 2,
+      "ordenesCompraId": 2,
+      "productoId": 2,
+      "cantidad": 5,
+      "precioCompra": 97
+    }
+  ],
+  "venta": [
+    {
+      "id": 1,
+      "tipoPago": "tipoPago 1",
+      "empleadoId": 1,
+      "clienteId": 1,
+      "fecha": 1667061560,
+      "total": 61
+    },
+    {
+      "id": 2,
+      "tipoPago": "tipoPago 2",
+      "empleadoId": 2,
+      "clienteId": 2,
+      "fecha": 1667061500,
+      "total": 6
+    }
+  ],
+  "detalleVenta": [
+    {
+      "id": 1,
+      "ventaId": 1,
+      "productoId": 1,
+      "cantidad": 45,
+      "precio": 39
+    },
+    {
+      "id": 2,
+      "ventaId": 2,
+      "productoId": 2,
+      "cantidad": 52,
+      "precio": 2
+    }
+  ],
+  "producto": [
+    {
+      "id": 2,
+      "nombre": "Gino",
+      "url_imagen": "urlasd2",
+      "detalle": "dasdasdalle 2",
+      "stock": 49
+    }
+  ],
+  "proveedor": [
+    {
+      "id": 1,
+      "nombre": "nombre 1",
+      "mail": "mail 1",
+      "telefono": "telefono 1",
+      "direccion": "direccion 1",
+      "metodo_envio": "metodo_envio 1"
+    },
+    {
+      "id": 2,
+      "nombre": "nombre 2",
+      "mail": "mail 2",
+      "telefono": "telefono 2",
+      "direccion": "direccion 2",
+      "metodo_envio": "metodo_envio 2"
+    }
+  ],
+  "empleado": [
+    {
+      "id": 1,
+      "nombre": "nombre 1",
+      "mail": "mail 1",
+      "telefono": "telefono 1",
+      "direccion": "direccion 1",
+      "rol": "rol 1",
+      "apellido": "apellido 1",
+      "documento": "documento 1"
+    },
+    {
+      "id": 2,
+      "nombre": "nombre 2",
+      "mail": "mail 2",
+      "telefono": "telefono 2",
+      "direccion": "direccion 2",
+      "rol": "rol 2",
+      "apellido": "apellido 2",
+      "documento": "documento 2"
+    }
+  ],
+  "cliente": [
+    {
+      "nombre": "Nahuel",
+      "apellido": "Moyano",
+      "mail": "nahumoyano@gmail.com",
+      "telefono": "3547467270",
+      "direccion": "entre rios 171",
+      "documento": 35471085,
+      "id": 1
+    },
+    {
+      "nombre": "nahu",
+      "apellido": "moyano",
+      "mail": "nakugabriel@gmail.com",
+      "telefono": "35474241760",
+      "direccion": "dasd",
+      "documento": 2133,
+      "id": 2
+    },
+    {
+      "categoria": {},
+      "nombre": "Luis",
+      "id": 4,
+      "apellido": "gabriel",
+      "mail": "aqui@gmail.com",
+      "telefono": "2966121231",
+      "direccion": "lejos",
+      "documento": 1085946
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Cliente } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
@@ -10,15 +10,17 @@ import { ClienteService } from 'src/app/services/cliente.service';
   styleUrls: ['./clients-list.component.css'],
 })
 export class ClientsListComponent implements OnInit {
-  // // @Input() cliente: Cliente;
-  @Input() id: string;
-  @Output() onEliminar = new EventEmitter();
+  @Input() cliente: Cliente;
 
   listado: Cliente[];
 
   private subscription = new Subscription();
 
-  constructor(private clienteService: ClienteService, private router: Router) {}
+  constructor(
+    private clienteService: ClienteService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.actualizarListado();
@@ -44,23 +46,22 @@ export class ClientsListComponent implements OnInit {
   actualizarArticulo(id: string) {
     this.router.navigate([]);
   }
-  eliminar() {
-    const result: boolean = confirm(
-      'Esta seguro que desea boorar este cliente?'
-    );
 
-    if (result) {
-      this.subscription.add(
-        this.clienteService.eliminar(this.id).subscribe({
-          next: () => {
-            this.onEliminar.emit();
-            alert('cliente eliminado con exito');
-          },
-          error: () => {
-            alert('error al borrar este cliente');
-          },
-        })
-      );
-    }
+  cargarArticulo() {
+    this.subscription.add(
+      this.activatedRoute.params.subscribe({
+        next: (params) => {
+          const id = params['id'];
+          this.clienteService.obtenerPorId(id).subscribe({
+            next: (respuesta: Cliente) => {
+              this.cliente = respuesta;
+            },
+            error: () => {
+              alert('error al obtener el cliente');
+            },
+          });
+        },
+      })
+    );
   }
 }

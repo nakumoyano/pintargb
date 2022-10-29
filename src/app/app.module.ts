@@ -23,7 +23,6 @@ import { NuevoProductoComponent } from './productos/nuevo-producto/nuevo-product
 import { ListadoProductosComponent } from './productos/listado-productos/listado-productos.component';
 import { EstadisticasComponent } from './estadisticas/estadisticas.component';
 import { DeleteComponent } from './clients/delete/delete.component';
-
 @NgModule({
   declarations: [
     AppComponent,

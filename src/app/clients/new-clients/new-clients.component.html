@@ -92,9 +92,20 @@
             />
           </div>
         </form>
-        <button type="button" class="btn btn-success mb-3" (click)="agregar()">
+        <button
+          class="btn btn-success mb-3"
+          role="button"
+          (click)="agregar()"
+          *ngIf="!cliente.id; else elseBlock"
+        >
           Cargar cliente
         </button>
+
+        <ng-template #elseBlock>
+          <button class="btn btn-success mb-3" (click)="update()">
+            Actualizar
+          </button>
+        </ng-template>
       </div>
     </div>
   </div>

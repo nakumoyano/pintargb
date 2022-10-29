@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Cliente } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-new-clients',
@@ -14,9 +15,15 @@ export class NewClientsComponent implements OnInit, OnDestroy {
 
   private subscription = new Subscription();
 
-  constructor(private clienteService: ClienteService, private router: Router) {}
+  constructor(
+    private clienteService: ClienteService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cargar();
+  }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
@@ -27,6 +34,7 @@ export class NewClientsComponent implements OnInit, OnDestroy {
       this.clienteService.agregar(this.cliente).subscribe({
         next: () => {
           this.router.navigate(['nuevo-cliente']);
+          location.reload();
         },
         error: () => {
           alert('Error al guardar el articulo');
@@ -35,7 +43,33 @@ export class NewClientsComponent implements OnInit, OnDestroy {
     );
   }
 
-  // cancelar(){
-  //   this.router.na
-  // }
+  cargar(): void {
+    this.activatedRoute.params.subscribe((e) => {
+      let id = e['id'];
+      if (id) {
+        this.clienteService
+          .obtenerPorId(id)
+          .subscribe((es) => (this.cliente = es));
+      }
+    });
+  }
+
+  update() {
+    Swal.fire({
+      title: '¿Quieres guardar los cambios realizados?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Guardar',
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire('Cambios guardados!', '', 'success');
+        this.clienteService
+          .modificar(this.cliente)
+          .subscribe((res) => this.router.navigate(['/listado-clientes']));
+      } else if (result.isDenied) {
+        Swal.fire('Cambios no guardados', '', 'info');
+      }
+    });
+  }
 }

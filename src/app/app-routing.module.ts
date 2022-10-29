@@ -13,6 +13,7 @@ import { ListadoProductosComponent } from './productos/listado-productos/listado
 import { NuevoProductoComponent } from './productos/nuevo-producto/nuevo-producto.component';
 import { ListaProveedoresComponent } from './proveedores/lista-proveedores/lista-proveedores.component';
 import { NuevoProveedorComponent } from './proveedores/nuevo-proveedor/nuevo-proveedor.component';
+
 const routes: Routes = [
   { path: '', component: LoginComponent },
   {
@@ -22,6 +23,11 @@ const routes: Routes = [
   },
   {
     path: 'nuevo-cliente',
+    component: NewClientsComponent,
+    canActivate: [LoginGuardian],
+  },
+  {
+    path: 'nuevo-cliente/:id',
     component: NewClientsComponent,
     canActivate: [LoginGuardian],
   },
