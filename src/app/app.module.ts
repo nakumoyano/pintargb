@@ -22,6 +22,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NuevoProductoComponent } from './productos/nuevo-producto/nuevo-producto.component';
 import { ListadoProductosComponent } from './productos/listado-productos/listado-productos.component';
 import { EstadisticasComponent } from './estadisticas/estadisticas.component';
+import { DeleteComponent } from './clients/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { EstadisticasComponent } from './estadisticas/estadisticas.component';
     NuevoProductoComponent,
     ListadoProductosComponent,
     EstadisticasComponent,
+    DeleteComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [LoginService, CookieService, LoginGuardian],

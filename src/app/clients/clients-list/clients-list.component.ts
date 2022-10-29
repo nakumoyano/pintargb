@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Cliente } from 'src/app/models/cliente';
@@ -10,6 +10,10 @@ import { ClienteService } from 'src/app/services/cliente.service';
   styleUrls: ['./clients-list.component.css'],
 })
 export class ClientsListComponent implements OnInit {
+  // // @Input() cliente: Cliente;
+  @Input() id: string;
+  @Output() onEliminar = new EventEmitter();
+
   listado: Cliente[];
 
   private subscription = new Subscription();
@@ -37,7 +41,26 @@ export class ClientsListComponent implements OnInit {
     );
   }
 
-  // actualizarArticulo(id:string){
-  //   this.router.navigate([])
-  // }
+  actualizarArticulo(id: string) {
+    this.router.navigate([]);
+  }
+  eliminar() {
+    const result: boolean = confirm(
+      'Esta seguro que desea boorar este cliente?'
+    );
+
+    if (result) {
+      this.subscription.add(
+        this.clienteService.eliminar(this.id).subscribe({
+          next: () => {
+            this.onEliminar.emit();
+            alert('cliente eliminado con exito');
+          },
+          error: () => {
+            alert('error al borrar este cliente');
+          },
+        })
+      );
+    }
+  }
 }
