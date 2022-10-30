@@ -22,9 +22,21 @@ export class LoginComponent implements OnInit {
     const password = form.value.password;
 
     localStorage.setItem('token', '');
-    form.value.email == 'empleado@pintargb.com'
-      ? localStorage.setItem('userType', 'employee')
-      : localStorage.setItem('userType', 'admin');
+
+    // form.value.email == 'empleado@pintargb.com'
+    //   ? localStorage.setItem('userType', 'employee')
+    //   : localStorage.setItem('userType', 'admin');
+    // this.loginService.login(email, password);
+
+    if (form.value.email == 'empleado@pintargb.com') {
+      localStorage.setItem('userType', 'employee');
+    } else if (form.value.email == 'encargadocompras@gmail.com') {
+      localStorage.setItem('userType', 'encargadocompras');
+    } else if (form.value.email == 'encargadodeposito@pintargb.com') {
+      localStorage.setItem('userType', 'encargadodeposito');
+    } else {
+      localStorage.setItem('userType', 'admin');
+    }
     this.loginService.login(email, password);
   }
 

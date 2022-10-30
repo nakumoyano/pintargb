@@ -1,26 +1,20 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ClienteService } from 'src/app/services/cliente.service';
+import { EmpleadoService } from 'src/app/services/empleado.service';
 import Swal from 'sweetalert2';
+
 @Component({
-  selector: 'app-delete',
-  templateUrl: './delete.component.html',
-  styleUrls: ['./delete.component.css'],
+  selector: 'app-delete-empleado',
+  templateUrl: './delete-empleado.component.html',
+  styleUrls: ['./delete-empleado.component.css'],
 })
-export class DeleteComponent implements OnInit, OnDestroy {
+export class DeleteEmpleadoComponent implements OnInit {
   @Input() id: string;
   @Output() onEliminar = new EventEmitter();
 
   private subscription = new Subscription();
 
-  constructor(private clienteService: ClienteService) {}
+  constructor(private empleadoService: EmpleadoService) {}
 
   ngOnInit(): void {}
 
@@ -30,7 +24,7 @@ export class DeleteComponent implements OnInit, OnDestroy {
 
   eliminar() {
     Swal.fire({
-      title: '¿Estás seguro que deseas eliminar este cliente?',
+      title: '¿Estás seguro que deseas eliminar este empleado?',
       text: '¡Esta acción no se puede revertir!',
       icon: 'warning',
       showCancelButton: true,
@@ -41,11 +35,11 @@ export class DeleteComponent implements OnInit, OnDestroy {
       if (result.isConfirmed) {
         Swal.fire(
           'Eliminado!',
-          'El cliente fue eliminado con éxito.',
+          'El empleado fue eliminado con éxito.',
           'success'
         );
         this.subscription.add(
-          this.clienteService.eliminar(this.id).subscribe({
+          this.empleadoService.eliminar(this.id).subscribe({
             next: () => {
               this.onEliminar.emit();
             },
@@ -53,7 +47,7 @@ export class DeleteComponent implements OnInit, OnDestroy {
               Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'Something went wrong!',
+                text: 'Ocurrio un error!',
                 footer: '<a href="">Why do I have this issue?</a>',
               });
             },

@@ -1,6 +1,5 @@
 <app-sidebar></app-sidebar>
 <app-navbar></app-navbar>
-
 <div id="content">
   <div class="row">
     <div class="col-lg-10 col-md-12 mx-auto">
@@ -22,13 +21,15 @@
           <h2>Datos Empleado</h2>
           <hr />
           <div class="form-group">
-            <label for="exampleInputEmail1">Nombre:</label>
+            <label for="inputNombre">Nombre:</label>
             <input
               type="text"
               class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
+              id="inputNombre"
+              name="nombre"
               placeholder="Ingrese el nombre del empleado"
+              [(ngModel)]="empleado.nombre"
+              required
             />
           </div>
           <div class="form-group">
@@ -39,60 +40,91 @@
               id="exampleInputEmail2"
               aria-describedby="emailHelp"
               placeholder="Ingrese el apellido del empleado"
+              name="apellido"
+              required
+              [(ngModel)]="empleado.apellido"
             />
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail3">Rol del empleado:</label>
-            <select class="custom-select" id="exampleInputEmail3">
-              <option selected>Seleccionar rol...</option>
-              <option value="1">Vendedor</option>
-              <option value="2">Control de depósito</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail4">N° Documento:</label>
-            <input
-              type="number"
-              class="form-control"
-              id="exampleInputEmail4"
-              aria-describedby="emailHelp"
-              placeholder="Ingrese el número de documento"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail5">Email:</label>
+            <label for="exampleInputEmail4">Email:</label>
             <input
               type="email"
               class="form-control"
-              id="exampleInputEmail5"
+              id="exampleInputEmail4"
               aria-describedby="emailHelp"
               placeholder="Ingrese el email del empleado"
+              name="mail"
+              required
+              [(ngModel)]="empleado.mail"
             />
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail6">Teléfono:</label>
+            <label for="exampleInputEmail8">DNI:</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail8"
+              aria-describedby="emailHelp"
+              placeholder="Ingrese el dni del empleado"
+              name="documento"
+              required
+              [(ngModel)]="empleado.documento"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail5">Teléfono:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail5"
+              aria-describedby="emailHelp"
+              placeholder="Ingrese el teléfono del empleado"
+              name="telefono"
+              required
+              [(ngModel)]="empleado.telefono"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail6">Dirección:</label>
             <input
               type="text"
               class="form-control"
               id="exampleInputEmail6"
               aria-describedby="emailHelp"
-              placeholder="Ingrese el teléfono del empleado"
+              placeholder="Ingrese la dirección del empleado"
+              name="direccion"
+              required
+              [(ngModel)]="empleado.direccion"
             />
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail7">Dirección:</label>
+            <label for="exampleInputEmail7">Rol:</label>
             <input
               type="text"
               class="form-control"
               id="exampleInputEmail7"
               aria-describedby="emailHelp"
-              placeholder="Ingrese la dirección del empleado"
+              placeholder="Ingrese el rol del empleado"
+              name="rol"
+              required
+              [(ngModel)]="empleado.rol"
             />
           </div>
-          <button type="button" class="btn btn-success mb-3">
-            Cargar empleado
-          </button>
         </form>
+        <button
+          class="btn btn-success mb-3"
+          role="button"
+          (click)="agregar()"
+          *ngIf="!empleado.id; else elseBlock"
+        >
+          Cargar empleado
+        </button>
+
+        <ng-template #elseBlock>
+          <button class="btn btn-success mb-3" (click)="update()">
+            Actualizar
+          </button>
+        </ng-template>
       </div>
     </div>
   </div>

@@ -34,8 +34,4 @@ export class ClienteService {
   update(cliente: Cliente): Observable<Cliente> {
     return this.http.put<Cliente>(this.API_URL, cliente);
   }
-
-  // editar(cliente:Cliente):Observable<Cliente> {
-  //   return this.http.put<Cliente>(this.API_URL, cliente)
-  // }
 }

@@ -24,6 +24,8 @@ import { ListadoProductosComponent } from './productos/listado-productos/listado
 import { EstadisticasComponent } from './estadisticas/estadisticas.component';
 import { DeleteComponent } from './clients/delete/delete.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
+import { DeleteEmpleadoComponent } from './employees/delete-empleado/delete-empleado.component';
+import { DeleteProveedorComponent } from './proveedores/delete-proveedor/delete-proveedor.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +45,8 @@ import { AyudaComponent } from './ayuda/ayuda.component';
     EstadisticasComponent,
     DeleteComponent,
     AyudaComponent,
+    DeleteEmpleadoComponent,
+    DeleteProveedorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [LoginService, CookieService, LoginGuardian],

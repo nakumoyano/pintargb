@@ -43,6 +43,11 @@ const routes: Routes = [
     canActivate: [LoginGuardian, RolesGuard],
   },
   {
+    path: 'nuevo-empleado/:id',
+    component: NewEmployeeComponent,
+    canActivate: [LoginGuardian, RolesGuard],
+  },
+  {
     path: 'listado-empleados',
     component: EmployeeListComponent,
     canActivate: [LoginGuardian, RolesGuard],
@@ -67,7 +72,7 @@ const routes: Routes = [
     component: ListadoProductosComponent,
     canActivate: [LoginGuardian],
   },
-  { path: 'ayuda', component: AyudaComponent },
+  { path: 'ayuda', component: AyudaComponent, canActivate: [LoginGuardian] },
   { path: '**', component: ErrorComponent },
 ];
 

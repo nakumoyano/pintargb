@@ -116,23 +116,40 @@
       "rol": "rol 2",
       "apellido": "apellido 2",
       "documento": "documento 2"
+    },
+    {
+      "nombre": "sad",
+      "apellido": "asd",
+      "mail": "asd",
+      "telefono": "dasd",
+      "direccion": "dasd",
+      "id": 3
+    },
+    {
+      "nombre": "naku",
+      "apellido": "moyano",
+      "mail": "naku@asd.com",
+      "telefono": "354741251",
+      "direccion": "entre rios 156341",
+      "rol": "empleado",
+      "id": 4
+    },
+    {
+      "nombre": "sa",
+      "apellido": "sa",
+      "mail": "sa",
+      "telefono": "sa",
+      "direccion": "sa",
+      "rol": "sa",
+      "id": 5
     }
   ],
   "cliente": [
     {
-      "nombre": "Nahuel",
-      "apellido": "Moyano",
-      "mail": "nahumoyano@gmail.com",
-      "telefono": "3547467270",
-      "direccion": "entre rios 171",
-      "documento": 35471085,
-      "id": 1
-    },
-    {
       "categoria": {},
       "nombre": "Luis",
       "id": 4,
-      "apellido": "gabriel",
+      "apellido": "Gabriel",
       "mail": "cache@gmail.com",
       "telefono": "2966121231",
       "direccion": "lejos",

@@ -9,7 +9,9 @@ import Swal from 'sweetalert2';
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
-  visible: boolean = false;
+  visibleEmpleado: boolean = false;
+  visibleECompras: boolean = false;
+  visibleEDeposito: boolean = false;
 
   constructor(
     private loginService: LoginService,
@@ -17,7 +19,9 @@ export class SidebarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.controlarUsuario();
+    this.controlarUsuarioEmpleado();
+    this.controlarUsuarioEncargadoCompras();
+    this.controladorUsuarioEncargadoDeposito();
   }
 
   logout() {
@@ -32,10 +36,31 @@ export class SidebarComponent implements OnInit {
     location.reload();
   }
 
-  controlarUsuario() {
-    let Role = localStorage.getItem('userType');
-    if (Role === 'employee') {
-      return (this.visible = !this.visible);
+  controlarUsuarioEmpleado() {
+    let RolEmpleado = localStorage.getItem('userType');
+    if (RolEmpleado === 'employee') {
+      return (this.visibleEmpleado = !this.visibleEmpleado);
+    }
+    return false;
+    // let Role = localStorage.getItem('userType');
+    // if (Role === 'employee') {
+    //   return (this.visible = !this.visible);
+    // }
+    // return false;
+  }
+
+  controlarUsuarioEncargadoCompras() {
+    let RolEncargadoCompras = localStorage.getItem('userType');
+    if (RolEncargadoCompras === 'encargadocompras') {
+      return (this.visibleECompras = !this.visibleECompras);
+    }
+    return false;
+  }
+
+  controladorUsuarioEncargadoDeposito() {
+    let RolEncargadoDeposito = localStorage.getItem('userType');
+    if (RolEncargadoDeposito === 'encargadodeposito') {
+      return (this.visibleEDeposito = !this.visibleEDeposito);
     }
     return false;
   }

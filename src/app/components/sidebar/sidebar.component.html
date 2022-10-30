@@ -49,7 +49,11 @@
         href="#homeSubmenu2"
         data-toggle="collapse"
         aria-expanded="false"
-        class="dropdown-toggle d-flex"
+        [ngClass]="
+          visibleECompras || visibleEDeposito
+            ? 'd-none'
+            : 'dropdown-toggle d-flex enlace'
+        "
       >
         <i class="fa-solid fa-user"></i><span class="enlace">Clientes </span>
       </a>
@@ -82,7 +86,11 @@
         href="#homeSubmenu3"
         data-toggle="collapse"
         aria-expanded="false"
-        [ngClass]="visible ? 'd-none' : 'dropdown-toggle d-flex enlace'"
+        [ngClass]="
+          visibleEmpleado || visibleECompras || visibleEDeposito
+            ? 'd-none'
+            : 'dropdown-toggle d-flex enlace'
+        "
       >
         <i class="fa-solid fa-user-tie"></i>Empleados</a
       >
@@ -153,7 +161,11 @@
         href=""
         data-toggle="collapse"
         aria-expanded="false"
-        [ngClass]="visible ? 'd-none' : 'd-flex'"
+        [ngClass]="
+          visibleEmpleado || visibleECompras || visibleEDeposito
+            ? 'd-none'
+            : 'd-flex'
+        "
         routerLink="/estadisticas"
         routerLinkActive="active"
         ><i class="fa-solid fa-chart-simple pl-1"></i
@@ -167,7 +179,9 @@
         href="#homeSubmenu1"
         data-toggle="collapse"
         aria-expanded="false"
-        class="dropdown-toggle d-flex"
+        [ngClass]="
+          visibleEDeposito ? 'd-none' : 'dropdown-toggle d-flex enlace'
+        "
       >
         <i class="fa-solid fa-cart-shopping"></i
         ><span class="enlace">Compras </span>
