@@ -39,7 +39,11 @@ export class NewEmployeeComponent implements OnInit {
           location.reload();
         },
         error: () => {
-          alert('Error al guardar el empleado');
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error al conectar con la Api!',
+          });
         },
       })
     );

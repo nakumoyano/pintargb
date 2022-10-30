@@ -23,11 +23,6 @@ export class LoginComponent implements OnInit {
 
     localStorage.setItem('token', '');
 
-    // form.value.email == 'empleado@pintargb.com'
-    //   ? localStorage.setItem('userType', 'employee')
-    //   : localStorage.setItem('userType', 'admin');
-    // this.loginService.login(email, password);
-
     if (form.value.email == 'empleado@pintargb.com') {
       localStorage.setItem('userType', 'employee');
     } else if (form.value.email == 'encargadocompras@gmail.com') {

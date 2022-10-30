@@ -1,15 +1,72 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { Proveedor } from 'src/app/models/proveedores';
+import { ProveedorService } from 'src/app/services/proveedor.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-lista-proveedores',
   templateUrl: './lista-proveedores.component.html',
-  styleUrls: ['./lista-proveedores.component.css']
+  styleUrls: ['./lista-proveedores.component.css'],
 })
 export class ListaProveedoresComponent implements OnInit {
+  @Input() proveedor: Proveedor;
 
-  constructor() { }
+  listado: Proveedor[];
+
+  private subscription = new Subscription();
+
+  constructor(
+    private proveedorServicio: ProveedorService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
+    this.actualizarListado();
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  actualizarListado() {
+    this.subscription.add(
+      this.proveedorServicio.obtener().subscribe({
+        next: (respuesta: Proveedor[]) => {
+          this.listado = respuesta;
+        },
+        error: () => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error al conectar con la Api!',
+          });
+        },
+      })
+    );
+  }
+
+  actualizarArticulo(id: string) {
+    this.router.navigate([]);
+  }
+
+  cargarArticulo() {
+    this.subscription.add(
+      this.activatedRoute.params.subscribe({
+        next: (params) => {
+          const id = params['id'];
+          this.proveedorServicio.obtenerPorId(id).subscribe({
+            next: (respuesta: Proveedor) => {
+              this.proveedor = respuesta;
+            },
+            error: () => {
+              alert('error al obtener el proveedor');
+            },
+          });
+        },
+      })
+    );
+  }
 }

@@ -42,11 +42,6 @@ export class SidebarComponent implements OnInit {
       return (this.visibleEmpleado = !this.visibleEmpleado);
     }
     return false;
-    // let Role = localStorage.getItem('userType');
-    // if (Role === 'employee') {
-    //   return (this.visible = !this.visible);
-    // }
-    // return false;
   }
 
   controlarUsuarioEncargadoCompras() {

@@ -37,11 +37,11 @@
               <td>{{ empleado.rol }}</td>
               <td>
                 <div class="d-flex">
-                  <app-delete
+                  <app-delete-empleado
                     [id]="empleado.id"
                     (onEliminar)="actualizarListado()"
                     class="mr-2"
-                  ></app-delete>
+                  ></app-delete-empleado>
                   <button
                     type="button"
                     name="button"

@@ -39,7 +39,11 @@ export class NewClientsComponent implements OnInit, OnDestroy {
           location.reload();
         },
         error: () => {
-          alert('Error al guardar el articulo');
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error al conectar con la Api!',
+          });
         },
       })
     );

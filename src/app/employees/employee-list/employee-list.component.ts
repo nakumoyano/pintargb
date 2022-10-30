@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Empleado } from 'src/app/models/empleado';
 import { EmpleadoService } from 'src/app/services/empleado.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
@@ -37,7 +37,11 @@ export class EmployeeListComponent implements OnInit {
           this.listado = respuesta;
         },
         error: () => {
-          alert('error con api');
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error al conectar con la Api!',
+          });
         },
       })
     );

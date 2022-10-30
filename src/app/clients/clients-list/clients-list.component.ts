@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Cliente } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-clients-list',
   templateUrl: './clients-list.component.html',
@@ -37,7 +37,11 @@ export class ClientsListComponent implements OnInit {
           this.listado = respuesta;
         },
         error: () => {
-          alert('error con api');
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error al conectar con la Api!',
+          });
         },
       })
     );
@@ -57,7 +61,11 @@ export class ClientsListComponent implements OnInit {
               this.cliente = respuesta;
             },
             error: () => {
-              alert('error al obtener el cliente');
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Error al conectar con la Api!',
+              });
             },
           });
         },

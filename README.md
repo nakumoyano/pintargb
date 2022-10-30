@@ -32,3 +32,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 <!-- Empleado: empleado@pintargb.com -->
 <!-- Encargado de Compras:encargadocompras@gmail.com -->
 <!-- Encargado de Depósito: encargadodeposito@pintargb.com -->
+
+<!-- ---------CODIGO ELIMINADO PERO GUARDADO POR LAS DUDAS -->
+<!-- // form.value.email == 'empleado@pintargb.com'
+    //   ? localStorage.setItem('userType', 'employee')
+    //   : localStorage.setItem('userType', 'admin');
+    // this.loginService.login(email, password); -->
