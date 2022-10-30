@@ -30,6 +30,8 @@ export class NewClientsComponent implements OnInit, OnDestroy {
   }
 
   agregar() {
+    Swal.fire({ title: 'Cliente registrado' });
+
     this.subscription.add(
       this.clienteService.agregar(this.cliente).subscribe({
         next: () => {

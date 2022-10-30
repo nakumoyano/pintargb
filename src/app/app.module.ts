@@ -23,6 +23,7 @@ import { NuevoProductoComponent } from './productos/nuevo-producto/nuevo-product
 import { ListadoProductosComponent } from './productos/listado-productos/listado-productos.component';
 import { EstadisticasComponent } from './estadisticas/estadisticas.component';
 import { DeleteComponent } from './clients/delete/delete.component';
+import { AyudaComponent } from './ayuda/ayuda.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +42,7 @@ import { DeleteComponent } from './clients/delete/delete.component';
     ListadoProductosComponent,
     EstadisticasComponent,
     DeleteComponent,
+    AyudaComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [LoginService, CookieService, LoginGuardian],

@@ -129,20 +129,11 @@
       "id": 1
     },
     {
-      "nombre": "nahu",
-      "apellido": "moyano",
-      "mail": "nakugabriel@gmail.com",
-      "telefono": "35474241760",
-      "direccion": "dasd",
-      "documento": 2133,
-      "id": 2
-    },
-    {
       "categoria": {},
       "nombre": "Luis",
       "id": 4,
       "apellido": "gabriel",
-      "mail": "aqui@gmail.com",
+      "mail": "cache@gmail.com",
       "telefono": "2966121231",
       "direccion": "lejos",
       "documento": 1085946

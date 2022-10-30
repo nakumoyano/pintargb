@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AyudaComponent } from './ayuda/ayuda.component';
 import { ClientsListComponent } from './clients/clients-list/clients-list.component';
 import { NewClientsComponent } from './clients/new-clients/new-clients.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
@@ -66,6 +67,7 @@ const routes: Routes = [
     component: ListadoProductosComponent,
     canActivate: [LoginGuardian],
   },
+  { path: 'ayuda', component: AyudaComponent },
   { path: '**', component: ErrorComponent },
 ];
 
