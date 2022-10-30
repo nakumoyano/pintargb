@@ -58,6 +58,11 @@ const routes: Routes = [
     canActivate: [LoginGuardian],
   },
   {
+    path: 'nuevo-proveedor/:id',
+    component: NuevoProveedorComponent,
+    canActivate: [LoginGuardian],
+  },
+  {
     path: 'listado-proveedores',
     component: ListaProveedoresComponent,
     canActivate: [LoginGuardian],

@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Empleado } from 'src/app/models/empleado';
+import { Roles } from 'src/app/models/roles';
 import { EmpleadoService } from 'src/app/services/empleado.service';
+import { RolService } from 'src/app/services/rol.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,17 +14,30 @@ import Swal from 'sweetalert2';
 })
 export class NewEmployeeComponent implements OnInit {
   empleado: Empleado = new Empleado();
+  roles: Roles[];
 
   private subscription = new Subscription();
 
   constructor(
     private empleadoServicio: EmpleadoService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private rolServicio: RolService
   ) {}
 
   ngOnInit(): void {
     this.cargar();
+    this.empleado = { rol: {} } as Empleado;
+    this.subscription.add(
+      this.rolServicio.obtener().subscribe({
+        next: (respuesta: Roles[]) => {
+          this.roles = respuesta;
+        },
+        error: () => {
+          alert('error al obtener los roles');
+        },
+      })
+    );
   }
 
   ngOnDestroy(): void {

@@ -99,7 +99,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail7">Rol:</label>
-            <input
+            <!-- <input
               type="text"
               class="form-control"
               id="exampleInputEmail7"
@@ -108,7 +108,16 @@
               name="rol"
               required
               [(ngModel)]="empleado.rol"
-            />
+            /> -->
+            <select
+              class="form-control"
+              name="rolId"
+              [(ngModel)]="empleado.rolId"
+            >
+              <option *ngFor="let rol of roles" [ngValue]="rol.id">
+                {{ rol.nombre }}
+              </option>
+            </select>
           </div>
         </form>
         <button

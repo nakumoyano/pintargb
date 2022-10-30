@@ -9,7 +9,7 @@
             <div
               class="col-sm-6 p-0 d-flex justify-content-lg-start justify-content-center"
             >
-              <h2 class="ml-lg-12">Nuevo Cliente</h2>
+              <h2 class="ml-lg-12">Nuevo Proveedor</h2>
             </div>
           </div>
         </div>
@@ -18,7 +18,7 @@
         <!-- -------------------------------- FORMULARIO ------------------------------------ -->
 
         <form>
-          <h2>Datos Cliente</h2>
+          <h2>Datos Proveedor</h2>
           <hr />
           <div class="form-group">
             <label for="inputNombre">Nombre:</label>
@@ -27,11 +27,23 @@
               class="form-control"
               id="inputNombre"
               name="nombre"
-              placeholder="Ingrese el nombre del cliente"
+              placeholder="Ingrese el nombre del proveedor"
               [(ngModel)]="proveedor.nombre"
               required
             />
           </div>
+          <!-- <div class="form-group">
+            <label for="inputIdentificacion">N° Identificación:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputIdentificacion"
+              name="identificacion"
+              placeholder="Ingrese el número de identificación del proveedor"
+              [(ngModel)]="proveedor.identificacion"
+              required
+            />
+          </div> -->
           <div class="form-group">
             <label for="exampleInputEmail4">Email:</label>
             <input
@@ -39,7 +51,7 @@
               class="form-control"
               id="exampleInputEmail4"
               aria-describedby="emailHelp"
-              placeholder="Ingrese el email del cliente"
+              placeholder="Ingrese el email del proveedor"
               name="mail"
               required
               [(ngModel)]="proveedor.mail"
@@ -52,7 +64,7 @@
               class="form-control"
               id="exampleInputEmail5"
               aria-describedby="emailHelp"
-              placeholder="Ingrese el teléfono del cliente"
+              placeholder="Ingrese el teléfono del proveedor"
               name="telefono"
               required
               [(ngModel)]="proveedor.telefono"
@@ -65,7 +77,7 @@
               class="form-control"
               id="exampleInputEmail6"
               aria-describedby="emailHelp"
-              placeholder="Ingrese la dirección del cliente"
+              placeholder="Ingrese la dirección del proveedor"
               name="direccion"
               required
               [(ngModel)]="proveedor.direccion"
@@ -78,7 +90,7 @@
               class="form-control"
               id="exampleInputEmail3"
               aria-describedby="emailHelp"
-              placeholder="Ingrese el número de documento"
+              placeholder="Ingrese el método de envío"
               name="metodo_envio"
               required
               [(ngModel)]="proveedor.metodo_envio"

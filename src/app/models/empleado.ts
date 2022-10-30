@@ -1,3 +1,5 @@
+import { Roles } from './roles';
+
 export class Empleado {
   id: string;
   nombre: string;
@@ -6,5 +8,6 @@ export class Empleado {
   direccion: string;
   apellido: string;
   documento: string;
-  rol: string;
+  rol?: Roles;
+  rolId: string;
 }

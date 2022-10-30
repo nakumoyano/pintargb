@@ -2,7 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Empleado } from 'src/app/models/empleado';
+import { Roles } from 'src/app/models/roles';
 import { EmpleadoService } from 'src/app/services/empleado.service';
+import { RolService } from 'src/app/services/rol.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-employee-list',
@@ -19,7 +21,8 @@ export class EmployeeListComponent implements OnInit {
   constructor(
     private empleadoServicio: EmpleadoService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private rolService: RolService
   ) {}
 
   ngOnInit(): void {
@@ -30,22 +33,22 @@ export class EmployeeListComponent implements OnInit {
     this.subscription.unsubscribe();
   }
 
-  actualizarListado() {
-    this.subscription.add(
-      this.empleadoServicio.obtener().subscribe({
-        next: (respuesta: Empleado[]) => {
-          this.listado = respuesta;
-        },
-        error: () => {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Error al conectar con la Api!',
-          });
-        },
-      })
-    );
-  }
+  // actualizarListado() {
+  //   this.subscription.add(
+  //     this.empleadoServicio.obtener().subscribe({
+  //       next: (respuesta: Empleado[]) => {
+  //         this.listado = respuesta;
+  //       },
+  //       error: () => {
+  //         Swal.fire({
+  //           icon: 'error',
+  //           title: 'Oops...',
+  //           text: 'Error al conectar con la Api!',
+  //         });
+  //       },
+  //     })
+  //   );
+  // }
 
   actualizarArticulo(id: string) {
     this.router.navigate([]);
@@ -61,7 +64,38 @@ export class EmployeeListComponent implements OnInit {
               this.empleado = respuesta;
             },
             error: () => {
-              alert('error al obtener el empleado');
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Error al obtener el empleado!',
+              });
+            },
+          });
+        },
+      })
+    );
+  }
+
+  actualizarListado() {
+    this.subscription.add(
+      this.rolService.obtener().subscribe({
+        next: (roles: Roles[]) => {
+          this.empleadoServicio.obtener().subscribe({
+            next: (respuesta: Empleado[]) => {
+              for (const empleado of respuesta) {
+                const rolIndex = roles.findIndex(
+                  (x) => x.id === empleado.rolId
+                );
+                empleado.rol = roles[rolIndex];
+              }
+              this.listado = respuesta;
+            },
+            error: (e) => {
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Error al conectar con la Api!',
+              });
             },
           });
         },

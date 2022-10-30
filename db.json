@@ -80,43 +80,15 @@
   ],
   "proveedor": [
     {
-      "id": 1,
-      "nombre": "nombre 1",
-      "mail": "mail 1",
-      "telefono": "telefono 1",
-      "direccion": "direccion 1",
-      "metodo_envio": "metodo_envio 1"
-    },
-    {
-      "id": 2,
-      "nombre": "nombre 2",
-      "mail": "mail 2",
-      "telefono": "telefono 2",
-      "direccion": "direccion 2",
-      "metodo_envio": "metodo_envio 2"
+      "nombre": "Damian",
+      "mail": "damian@gmail.com",
+      "telefono": "3547524681",
+      "direccion": "Bolivia 272",
+      "metodo_envio": 231,
+      "id": 1
     }
   ],
   "empleado": [
-    {
-      "id": 1,
-      "nombre": "nombre 1",
-      "mail": "mail 1",
-      "telefono": "telefono 1",
-      "direccion": "direccion 1",
-      "rol": "rol 1",
-      "apellido": "apellido 1",
-      "documento": "documento 1"
-    },
-    {
-      "id": 2,
-      "nombre": "nombre 2",
-      "mail": "mail 2",
-      "telefono": "telefono 2",
-      "direccion": "direccion 2",
-      "rol": "rol 2",
-      "apellido": "apellido 2",
-      "documento": "documento 2"
-    },
     {
       "nombre": "sad",
       "apellido": "asd",
@@ -131,7 +103,7 @@
       "mail": "naku@asd.com",
       "telefono": "354741251",
       "direccion": "entre rios 156341",
-      "rol": "empleado",
+      "rol": 3,
       "id": 4
     },
     {
@@ -140,8 +112,30 @@
       "mail": "sa",
       "telefono": "sa",
       "direccion": "sa",
-      "rol": "sa",
+      "rol": 1,
       "id": 5
+    },
+    {
+      "rol": {},
+      "rolId": 2,
+      "nombre": "Facunfo",
+      "apellido": "Gomez",
+      "mail": "facugomez@gmail.com",
+      "documento": "42456123",
+      "telefono": "3512645745",
+      "direccion": "Ayupanqca 75",
+      "id": 6
+    },
+    {
+      "rol": {},
+      "nombre": "Luisa",
+      "apellido": "Lane",
+      "mail": "lanelouis@gmail.com",
+      "documento": "3546212052",
+      "telefono": "2696412335",
+      "direccion": "Smallville",
+      "rolId": 2,
+      "id": 7
     }
   ],
   "cliente": [
@@ -154,6 +148,20 @@
       "telefono": "2966121231",
       "direccion": "lejos",
       "documento": 1085946
+    }
+  ],
+  "roles": [
+    {
+      "nombre": "Empleado",
+      "id": 1
+    },
+    {
+      "nombre": "Encargado de Compras",
+      "id": 2
+    },
+    {
+      "nombre": "Encargado de Depósito",
+      "id": 3
     }
   ]
 }
