@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { MetodosEnvios } from 'src/app/models/metodoEnvio';
 import { Proveedor } from 'src/app/models/proveedores';
+import { MetodoEnvioService } from 'src/app/services/metodo-envio.service';
 import { ProveedorService } from 'src/app/services/proveedor.service';
 import Swal from 'sweetalert2';
 
@@ -12,17 +14,29 @@ import Swal from 'sweetalert2';
 })
 export class NuevoProveedorComponent implements OnInit {
   proveedor: Proveedor = new Proveedor();
-
+  metodos: MetodosEnvios[];
   private subscription = new Subscription();
 
   constructor(
     private proveedorService: ProveedorService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private metodoEnvioServicio: MetodoEnvioService
   ) {}
 
   ngOnInit(): void {
     this.cargar();
+    this.proveedor = { metodoEnvio: {} } as Proveedor;
+    this.subscription.add(
+      this.metodoEnvioServicio.obtener().subscribe({
+        next: (respuesta: MetodosEnvios[]) => {
+          this.metodos = respuesta;
+        },
+        error: () => {
+          alert('error al obtener los modos de nevios');
+        },
+      })
+    );
   }
 
   ngOnDestroy(): void {

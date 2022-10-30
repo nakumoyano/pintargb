@@ -32,7 +32,7 @@
               required
             />
           </div>
-          <!-- <div class="form-group">
+          <div class="form-group">
             <label for="inputIdentificacion">N° Identificación:</label>
             <input
               type="text"
@@ -40,10 +40,10 @@
               id="inputIdentificacion"
               name="identificacion"
               placeholder="Ingrese el número de identificación del proveedor"
-              [(ngModel)]="proveedor.identificacion"
+              [(ngModel)]="proveedor.numIdentificaion"
               required
             />
-          </div> -->
+          </div>
           <div class="form-group">
             <label for="exampleInputEmail4">Email:</label>
             <input
@@ -84,17 +84,16 @@
             />
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail3">Método de envío:</label>
-            <input
-              type="number"
+            <label for="exampleInputEmail3">Modo de envío:</label>
+            <select
               class="form-control"
-              id="exampleInputEmail3"
-              aria-describedby="emailHelp"
-              placeholder="Ingrese el método de envío"
-              name="metodo_envio"
-              required
-              [(ngModel)]="proveedor.metodo_envio"
-            />
+              name="rolId"
+              [(ngModel)]="proveedor.metodoEnvioId"
+            >
+              <option *ngFor="let metodo of metodos" [ngValue]="metodo.id">
+                {{ metodo.tipo }}
+              </option>
+            </select>
           </div>
         </form>
         <button

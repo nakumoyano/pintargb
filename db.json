@@ -80,12 +80,32 @@
   ],
   "proveedor": [
     {
-      "nombre": "Damian",
-      "mail": "damian@gmail.com",
-      "telefono": "3547524681",
-      "direccion": "Bolivia 272",
-      "metodo_envio": 231,
-      "id": 1
+      "id": 1,
+      "nombre": "Ulrico",
+      "numIdentificacion": 1456,
+      "mail": "ulricolindo@gmail.com",
+      "telefono": 35474213,
+      "direccion": "Entre rios",
+      "metodoEnvio": "Entrega por correo"
+    },
+    {
+      "metodoEnvio": {},
+      "nombre": "dsad",
+      "mail": "dasd",
+      "telefono": "dsad",
+      "direccion": "dasd",
+      "metodoEnvioId": 2,
+      "id": 2
+    },
+    {
+      "metodoEnvio": {},
+      "nombre": "nahuel",
+      "numIdentificaion": "12313",
+      "mail": "323",
+      "telefono": "DASDS",
+      "direccion": "dasdas",
+      "metodoEnvioId": 3,
+      "id": 3
     }
   ],
   "empleado": [
@@ -162,6 +182,20 @@
     {
       "nombre": "Encargado de Depósito",
       "id": 3
+    }
+  ],
+  "metodosEnvios": [
+    {
+      "id": 1,
+      "tipo": "Entrega por correo"
+    },
+    {
+      "id": 2,
+      "tipo": "Entrega presencial"
+    },
+    {
+      "id": 3,
+      "tipo": "Entrega por empresa privada"
     }
   ]
 }

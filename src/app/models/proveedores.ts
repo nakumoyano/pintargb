@@ -1,8 +1,12 @@
+import { MetodosEnvios } from './metodoEnvio';
+
 export class Proveedor {
   id: string;
   nombre: string;
+  numIdentificaion: number;
   mail: string;
-  telefono: string;
+  telefono: number;
   direccion: string;
-  metodo_envio: string;
+  metodoEnvio?: MetodosEnvios;
+  metodoEnvioId: string;
 }

@@ -17,21 +17,23 @@
           <thead>
             <tr>
               <th scope="col">Nombre</th>
+              <th scope="col">N° Identificación</th>
               <th scope="col">Email</th>
               <th scope="col">Teléfono</th>
               <th scope="col">Dirección</th>
-              <th scope="col">Método de envio</th>
+              <th scope="col">Modo de envio</th>
               <th scope="col">Acción</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let proveedor of listado">
               <td>{{ proveedor.nombre }}</td>
+              <td>{{ proveedor.numIdentificaion }}</td>
               <td>{{ proveedor.mail }}</td>
               <td>{{ proveedor.telefono }}</td>
               <td>{{ proveedor.direccion }}</td>
-              <td>{{ proveedor.metodo_envio }}</td>
-              <td>{{ proveedor.metodo_envio }}</td>
+              <td>{{ proveedor.metodoEnvio?.tipo }}</td>
+
               <td>
                 <div class="d-flex">
                   <app-delete-proveedor
