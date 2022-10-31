@@ -261,6 +261,15 @@
       "direccion": "Brasil 75",
       "documento": 43012342,
       "id": 8
+    },
+    {
+      "nombre": "Juan ",
+      "apellido": "Salgado",
+      "mail": "juansalgado@gmail.com",
+      "telefono": "3547521564",
+      "direccion": "Av. Mayo 21",
+      "documento": 401532145,
+      "id": 9
     }
   ],
   "roles": [

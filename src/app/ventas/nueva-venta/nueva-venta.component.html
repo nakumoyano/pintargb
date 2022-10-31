@@ -165,20 +165,22 @@
             </div>
           </div>
         </form>
-        <button
-          class="btn btn-success mb-3"
-          role="button"
-          (click)="agregar()"
-          *ngIf="!venta.id; else elseBlock"
-        >
-          Cargar venta
-        </button>
-
-        <ng-template #elseBlock>
-          <button class="btn btn-success mb-3" (click)="update()">
-            Actualizar
+        <div class="col-12">
+          <button
+            class="btn btn-success mb-3"
+            role="button"
+            (click)="agregar()"
+            *ngIf="!venta.id; else elseBlock"
+          >
+            Cargar venta
           </button>
-        </ng-template>
+
+          <ng-template #elseBlock>
+            <button class="btn btn-success mb-3" (click)="update()">
+              Actualizar
+            </button>
+          </ng-template>
+        </div>
       </div>
     </div>
   </div>

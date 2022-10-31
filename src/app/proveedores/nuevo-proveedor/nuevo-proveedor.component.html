@@ -20,96 +20,104 @@
         <form>
           <h2>Datos Proveedor</h2>
           <hr />
-          <div class="form-group">
-            <label for="inputNombre">Nombre:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="inputNombre"
-              name="nombre"
-              placeholder="Ingrese el nombre del proveedor"
-              [(ngModel)]="proveedor.nombre"
-              required
-            />
+          <div class="col-12 d-flex">
+            <div class="form-group col-lg-6 px-0">
+              <label for="inputNombre">Nombre:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputNombre"
+                name="nombre"
+                placeholder="Ingrese el nombre del proveedor"
+                [(ngModel)]="proveedor.nombre"
+                required
+              />
+            </div>
+            <div class="form-group col-lg-6">
+              <label for="inputIdentificacion">N° Identificación:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputIdentificacion"
+                name="identificacion"
+                placeholder="Ingrese el número de identificación del proveedor"
+                [(ngModel)]="proveedor.numIdentificaion"
+                required
+              />
+            </div>
           </div>
-          <div class="form-group">
-            <label for="inputIdentificacion">N° Identificación:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="inputIdentificacion"
-              name="identificacion"
-              placeholder="Ingrese el número de identificación del proveedor"
-              [(ngModel)]="proveedor.numIdentificaion"
-              required
-            />
+          <div class="col-12 d-flex">
+            <div class="form-group col-lg-6 px-0">
+              <label for="exampleInputEmail4">Email:</label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail4"
+                aria-describedby="emailHelp"
+                placeholder="Ingrese el email del proveedor"
+                name="mail"
+                required
+                [(ngModel)]="proveedor.mail"
+              />
+            </div>
+            <div class="form-group col-lg-6">
+              <label for="exampleInputEmail5">Teléfono:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail5"
+                aria-describedby="emailHelp"
+                placeholder="Ingrese el teléfono del proveedor"
+                name="telefono"
+                required
+                [(ngModel)]="proveedor.telefono"
+              />
+            </div>
           </div>
-          <div class="form-group">
-            <label for="exampleInputEmail4">Email:</label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail4"
-              aria-describedby="emailHelp"
-              placeholder="Ingrese el email del proveedor"
-              name="mail"
-              required
-              [(ngModel)]="proveedor.mail"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail5">Teléfono:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleInputEmail5"
-              aria-describedby="emailHelp"
-              placeholder="Ingrese el teléfono del proveedor"
-              name="telefono"
-              required
-              [(ngModel)]="proveedor.telefono"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail6">Dirección:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleInputEmail6"
-              aria-describedby="emailHelp"
-              placeholder="Ingrese la dirección del proveedor"
-              name="direccion"
-              required
-              [(ngModel)]="proveedor.direccion"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail3">Modo de envío:</label>
-            <select
-              class="form-control"
-              name="rolId"
-              [(ngModel)]="proveedor.metodoEnvioId"
-            >
-              <option *ngFor="let metodo of metodos" [ngValue]="metodo.id">
-                {{ metodo.tipo }}
-              </option>
-            </select>
+          <div class="col-12 d-flex">
+            <div class="form-group col-lg-6 px-0">
+              <label for="exampleInputEmail6">Dirección:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail6"
+                aria-describedby="emailHelp"
+                placeholder="Ingrese la dirección del proveedor"
+                name="direccion"
+                required
+                [(ngModel)]="proveedor.direccion"
+              />
+            </div>
+            <div class="form-group col-lg-6">
+              <label for="exampleInputEmail3">Modo de envío:</label>
+              <select
+                class="form-control"
+                name="rolId"
+                [(ngModel)]="proveedor.metodoEnvioId"
+              >
+                <option *ngFor="let metodo of metodos" [ngValue]="metodo.id">
+                  {{ metodo.tipo }}
+                </option>
+              </select>
+            </div>
           </div>
         </form>
-        <button
-          class="btn btn-success mb-3"
-          role="button"
-          (click)="agregar()"
-          *ngIf="!proveedor.id; else elseBlock"
-        >
-          Cargar cliente
-        </button>
-
-        <ng-template #elseBlock>
-          <button class="btn btn-success mb-3" (click)="update()">
-            Actualizar
+        <div class="col-12">
+          <button
+            class="btn btn-success mb-3"
+            role="button"
+            (click)="agregar()"
+            *ngIf="!proveedor.id; else elseBlock"
+          >
+            Cargar proveedor
           </button>
-        </ng-template>
+
+          <ng-template #elseBlock>
+            <button class="btn btn-success mb-3" (click)="update()">
+              Actualizar
+            </button>
+          </ng-template>
+        </div>
       </div>
     </div>
   </div>
