@@ -39,37 +39,52 @@
     {
       "empleados": {},
       "empleadoId": 6,
-      "tipoPagoId": 1,
-      "clienteId": 4,
-      "fecha": "2022-10-18",
-      "total": 3333,
-      "id": 8
-    },
-    {
-      "empleados": {},
-      "empleadoId": 7,
-      "tipoPagoId": 2,
-      "clienteId": 4,
-      "fecha": "2022-10-12",
-      "total": 5000,
-      "id": 9
-    },
-    {
-      "empleados": {},
-      "empleadoId": 8,
-      "tipoPagoId": 3,
-      "clienteId": 4,
-      "fecha": "2022-11-03",
-      "total": 4251,
-      "id": 10
-    },
-    {
-      "empleados": {},
-      "empleadoId": 6,
-      "clienteId": 4,
+      "clienteId": 8,
       "fecha": "2022-10-03",
       "total": 12354,
-      "id": 11
+      "id": 11,
+      "tipoPagoId": 2,
+      "productoId": 7
+    },
+    {
+      "empleados": {},
+      "total": 51231,
+      "id": 12,
+      "tipoPagoId": 4,
+      "empleadoId": 7,
+      "clienteId": 5,
+      "fecha": "2022-11-04",
+      "productoId": 8
+    },
+    {
+      "productos": {},
+      "productoId": 9,
+      "id": 13,
+      "empleadoId": 7,
+      "tipoPagoId": 1,
+      "clienteId": 6,
+      "fecha": "2022-10-08",
+      "total": 10000
+    },
+    {
+      "productos": {},
+      "empleadoId": 8,
+      "tipoPagoId": 1,
+      "clienteId": 7,
+      "productoId": 7,
+      "fecha": "2022-10-09",
+      "total": 35000,
+      "id": 14
+    },
+    {
+      "productos": {},
+      "empleadoId": 10,
+      "tipoPagoId": 2,
+      "clienteId": 8,
+      "productoId": 6,
+      "fecha": "2022-10-10",
+      "total": 532,
+      "id": 15
     }
   ],
   "detalleVenta": [
@@ -90,11 +105,34 @@
   ],
   "producto": [
     {
-      "id": 2,
-      "nombre": "Gino",
-      "url_imagen": "urlasd2",
-      "detalle": "dasdasdalle 2",
-      "stock": 49
+      "nombre": "Sherwin Latex Interior Exterior",
+      "detalle": "Nueva 20lts",
+      "stock": 30,
+      "id": 5
+    },
+    {
+      "nombre": "Stanley Taladro",
+      "detalle": "Atornillador Inalámbrico",
+      "stock": 50,
+      "id": 6
+    },
+    {
+      "nombre": "Alba Latex Interior",
+      "detalle": "Lavable mate 20 lts",
+      "stock": 7,
+      "id": 7
+    },
+    {
+      "nombre": "Loxon Latex interior ",
+      "detalle": "loxon blanco 20 lts",
+      "stock": 30,
+      "id": 8
+    },
+    {
+      "nombre": "Plavicon Pintura ",
+      "detalle": "Piletas al agua azul caribe 20 lts",
+      "stock": 50,
+      "id": 9
     }
   ],
   "proveedor": [
@@ -153,6 +191,28 @@
       "direccion": "España 123",
       "rolId": 1,
       "id": 8
+    },
+    {
+      "rol": {},
+      "nombre": "Juan",
+      "apellido": "Brepma",
+      "mail": "juanchima@gmail.com",
+      "documento": "39456123",
+      "telefono": "3547625413",
+      "direccion": "Uruguay 123",
+      "rolId": 1,
+      "id": 9
+    },
+    {
+      "rol": {},
+      "nombre": "Azul",
+      "apellido": "Esteller",
+      "mail": "achuEs@gmail.com",
+      "documento": "43156489",
+      "telefono": "35478596412",
+      "direccion": "Alvear 45",
+      "rolId": 2,
+      "id": 10
     }
   ],
   "cliente": [
@@ -165,6 +225,42 @@
       "telefono": "2966121231",
       "direccion": "lejos",
       "documento": 1085946
+    },
+    {
+      "nombre": "Jose",
+      "apellido": "Lopez",
+      "mail": "josewsito@gmail.com",
+      "telefono": "354745131",
+      "direccion": "Yupalti 513",
+      "documento": 20156431,
+      "id": 5
+    },
+    {
+      "nombre": "Joaquin",
+      "apellido": "Velazquez",
+      "mail": "joaki@gmail.com",
+      "telefono": "351421234",
+      "direccion": "Uray 52",
+      "documento": 40153264,
+      "id": 6
+    },
+    {
+      "nombre": "Ulises",
+      "apellido": "Turin",
+      "mail": "t.uli@gmail.com",
+      "telefono": "354726153",
+      "direccion": "Formosa 45",
+      "documento": 654103163,
+      "id": 7
+    },
+    {
+      "nombre": "Rodolfo",
+      "apellido": "Corsico",
+      "mail": "rodol@gmail.com",
+      "telefono": "54132141",
+      "direccion": "Brasil 75",
+      "documento": 43012342,
+      "id": 8
     }
   ],
   "roles": [

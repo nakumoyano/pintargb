@@ -9,7 +9,7 @@
             <div
               class="col-sm-6 p-0 d-flex justify-content-lg-start justify-content-center"
             >
-              <h2 class="ml-lg-2">Listado de Empleados</h2>
+              <h2 class="ml-lg-2">Listado de Ventas</h2>
             </div>
           </div>
         </div>
@@ -21,6 +21,7 @@
               <th scope="col">Cliente</th>
               <th scope="col">Fecha</th>
               <th scope="col">Importe total</th>
+              <th scope="col">Producto</th>
               <th scope="col">Acción</th>
             </tr>
           </thead>
@@ -40,6 +41,8 @@
               <td>{{ venta.clientes?.nombre }}</td>
               <td>{{ venta.fecha }}</td>
               <td>$ {{ venta.total }}</td>
+              <td>{{ venta.productos?.nombre }}</td>
+
               <td>
                 <div class="d-flex">
                   <app-eliminar-venta

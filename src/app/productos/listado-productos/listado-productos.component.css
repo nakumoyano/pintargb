@@ -145,6 +145,10 @@ a:focus {
   border-radius: 0px 0px 0 0;
 }
 
+.table td,
+.table th {
+  width: 40%;
+}
 .table-title h2 {
   margin: 5px 0 0;
   font-size: 17px;

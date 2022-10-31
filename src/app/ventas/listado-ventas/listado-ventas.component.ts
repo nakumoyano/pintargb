@@ -3,10 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Cliente } from 'src/app/models/cliente';
 import { Empleado } from 'src/app/models/empleado';
+import { Producto } from 'src/app/models/producto';
 import { TipoPago } from 'src/app/models/tipoPago';
 import { Venta } from 'src/app/models/venta';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { EmpleadoService } from 'src/app/services/empleado.service';
+import { ProductoService } from 'src/app/services/producto.service';
 import { TipoPagoService } from 'src/app/services/tipo-pago.service';
 import { VentaService } from 'src/app/services/venta.service';
 import Swal from 'sweetalert2';
@@ -29,7 +31,8 @@ export class ListadoVentasComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private clienteService: ClienteService,
     private ventaServicio: VentaService,
-    private tipoPagoService: TipoPagoService
+    private tipoPagoService: TipoPagoService,
+    private productoService: ProductoService
   ) {}
 
   ngOnInit(): void {
@@ -75,29 +78,37 @@ export class ListadoVentasComponent implements OnInit {
             next: (clients: Cliente[]) => {
               this.tipoPagoService.obtener().subscribe({
                 next: (pagos: TipoPago[]) => {
-                  this.ventaServicio.obtener().subscribe({
-                    next: (respuesta: Venta[]) => {
-                      for (const venta of respuesta) {
-                        const empleadoIndex = employees.findIndex(
-                          (x) => x.id === venta.empleadoId
-                        );
-                        const clienteIndex = clients.findIndex(
-                          (xx) => xx.id === venta.clienteId
-                        );
-                        const pagoIndex = pagos.findIndex(
-                          (xxx) => xxx.id === venta.tipoPagoId
-                        );
-                        venta.empleados = employees[empleadoIndex];
-                        venta.clientes = clients[clienteIndex];
-                        venta.tipoPago = pagos[pagoIndex];
-                      }
-                      this.listado = respuesta;
-                    },
-                    error: (e) => {
-                      Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Error al conectar con la Api!',
+                  this.productoService.obtener().subscribe({
+                    next: (products: Producto[]) => {
+                      this.ventaServicio.obtener().subscribe({
+                        next: (respuesta: Venta[]) => {
+                          for (const venta of respuesta) {
+                            const empleadoIndex = employees.findIndex(
+                              (x) => x.id === venta.empleadoId
+                            );
+                            const clienteIndex = clients.findIndex(
+                              (xx) => xx.id === venta.clienteId
+                            );
+                            const pagoIndex = pagos.findIndex(
+                              (xxx) => xxx.id === venta.tipoPagoId
+                            );
+                            const productoIndex = products.findIndex(
+                              (xxxx) => xxxx.id === venta.productoId
+                            );
+                            venta.empleados = employees[empleadoIndex];
+                            venta.clientes = clients[clienteIndex];
+                            venta.tipoPago = pagos[pagoIndex];
+                            venta.productos = products[productoIndex];
+                          }
+                          this.listado = respuesta;
+                        },
+                        error: (e) => {
+                          Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Error al conectar con la Api!',
+                          });
+                        },
                       });
                     },
                   });
@@ -111,22 +122,37 @@ export class ListadoVentasComponent implements OnInit {
     // this.subscription.add(
     //   this.empleadoServicio.obtener().subscribe({
     //     next: (employees: Empleado[]) => {
-    //       this.ventaServicio.obtener().subscribe({
-    //         next: (respuesta: Venta[]) => {
-    //           for (const venta of respuesta) {
-    //             const empleadoIndex = employees.findIndex(
-    //               (x) => x.id === venta.empleadoId
-    //             );
-    //             venta.empleados = employees[empleadoIndex];
-    //           }
-    //           this.listado = respuesta;
-    //         },
-
-    //         error: (e) => {
-    //           Swal.fire({
-    //             icon: 'error',
-    //             title: 'Oops...',
-    //             text: 'Error al conectar con la Api!',
+    //       this.clienteService.obtener().subscribe({
+    //         next: (clients: Cliente[]) => {
+    //           this.tipoPagoService.obtener().subscribe({
+    //             next: (pagos: TipoPago[]) => {
+    //               this.ventaServicio.obtener().subscribe({
+    //                 next: (respuesta: Venta[]) => {
+    //                   for (const venta of respuesta) {
+    //                     const empleadoIndex = employees.findIndex(
+    //                       (x) => x.id === venta.empleadoId
+    //                     );
+    //                     const clienteIndex = clients.findIndex(
+    //                       (xx) => xx.id === venta.clienteId
+    //                     );
+    //                     const pagoIndex = pagos.findIndex(
+    //                       (xxx) => xxx.id === venta.tipoPagoId
+    //                     );
+    //                     venta.empleados = employees[empleadoIndex];
+    //                     venta.clientes = clients[clienteIndex];
+    //                     venta.tipoPago = pagos[pagoIndex];
+    //                   }
+    //                   this.listado = respuesta;
+    //                 },
+    //                 error: (e) => {
+    //                   Swal.fire({
+    //                     icon: 'error',
+    //                     title: 'Oops...',
+    //                     text: 'Error al conectar con la Api!',
+    //                   });
+    //                 },
+    //               });
+    //             },
     //           });
     //         },
     //       });

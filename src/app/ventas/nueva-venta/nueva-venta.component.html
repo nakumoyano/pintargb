@@ -40,7 +40,7 @@
             <div class="form-group col-lg-6">
               <label for="inputPago">Tipo de pago:</label>
               <select
-                class="form-control"
+                class="form-control custom-select"
                 name="tipoPagoId"
                 id="inputPago"
                 [(ngModel)]="venta.tipoPagoId"
@@ -76,6 +76,7 @@
               />
             </div>
           </div>
+
           <div class="form-group">
             <div class="form-check">
               <input
@@ -115,6 +116,24 @@
               >
                 Ir
               </button>
+            </div>
+          </div>
+          <div class="col-12 d-flex">
+            <div class="form-group col-lg-6 px-0">
+              <label for="inputProducto">Producto:</label>
+              <select
+                class="form-control"
+                name="productoId"
+                id="inputProducto"
+                [(ngModel)]="venta.productoId"
+              >
+                <option
+                  *ngFor="let producto of products"
+                  [ngValue]="producto.id"
+                >
+                  {{ producto.nombre }}
+                </option>
+              </select>
             </div>
           </div>
           <div class="col-lg-12 d-flex mt-3">

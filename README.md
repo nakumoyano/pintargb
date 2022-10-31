@@ -38,3 +38,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     //   ? localStorage.setItem('userType', 'employee')
     //   : localStorage.setItem('userType', 'admin');
     // this.loginService.login(email, password); -->
+
+<!-- COMANDO PARA EJECUTAR JSONS SERVER -->
+<!-- json-server --watch db.json -->

@@ -75,6 +75,11 @@ const routes: Routes = [
     canActivate: [LoginGuardian],
   },
   {
+    path: 'nuevo-producto/:id',
+    component: NuevoProductoComponent,
+    canActivate: [LoginGuardian],
+  },
+  {
     path: 'listado-productos',
     component: ListadoProductosComponent,
     canActivate: [LoginGuardian],

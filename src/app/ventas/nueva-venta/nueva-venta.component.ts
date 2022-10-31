@@ -3,10 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Cliente } from 'src/app/models/cliente';
 import { Empleado } from 'src/app/models/empleado';
+import { Producto } from 'src/app/models/producto';
 import { TipoPago } from 'src/app/models/tipoPago';
 import { Venta } from 'src/app/models/venta';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { EmpleadoService } from 'src/app/services/empleado.service';
+import { ProductoService } from 'src/app/services/producto.service';
 import { TipoPagoService } from 'src/app/services/tipo-pago.service';
 import { VentaService } from 'src/app/services/venta.service';
 import Swal from 'sweetalert2';
@@ -21,6 +23,7 @@ export class NuevaVentaComponent implements OnInit {
   tiposPagos: TipoPago[];
   employees: Empleado[];
   clients: Cliente[];
+  products: Producto[];
 
   check = false;
   checkImage = false;
@@ -34,7 +37,8 @@ export class NuevaVentaComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private tipoPagoServicio: TipoPagoService,
     private empleadoServicio: EmpleadoService,
-    private clienteServicio: ClienteService
+    private clienteServicio: ClienteService,
+    private productoServicio: ProductoService
   ) {}
 
   ngOnInit(): void {
@@ -42,6 +46,7 @@ export class NuevaVentaComponent implements OnInit {
     this.cargarTiposPagos();
     this.cargarClientes();
     this.cargarEmpleados();
+    this.cargarProductos();
   }
 
   ngOnDestroy(): void {
@@ -142,10 +147,28 @@ export class NuevaVentaComponent implements OnInit {
     );
   }
 
+  cargarProductos() {
+    this.venta = { productos: {} } as Venta;
+    this.subscription.add(
+      this.productoServicio.obtener().subscribe({
+        next: (respuesta: Producto[]) => {
+          this.products = respuesta;
+        },
+        error: () => {
+          alert('error al obtener los productos');
+        },
+      })
+    );
+  }
+
   checkFunction() {
     this.check = !this.check;
   }
   checkImageFunction() {
     this.checkImage = !this.checkImage;
+  }
+
+  recargar() {
+    return location.reload();
   }
 }

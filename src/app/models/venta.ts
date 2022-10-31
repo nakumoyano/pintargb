@@ -1,5 +1,6 @@
 import { Cliente } from './cliente';
 import { Empleado } from './empleado';
+import { Producto } from './producto';
 import { TipoPago } from './tipoPago';
 
 export class Venta {
@@ -12,4 +13,6 @@ export class Venta {
   clienteId: string;
   fecha: Date;
   total: number;
+  productos?: Producto;
+  productoId: string;
 }
