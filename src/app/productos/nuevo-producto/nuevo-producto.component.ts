@@ -30,7 +30,13 @@ export class NuevoProductoComponent implements OnInit {
   }
 
   agregar() {
-    Swal.fire({ title: 'Producto registrado' });
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Producto registrado!',
+      showConfirmButton: false,
+      timer: 5000,
+    });
 
     this.subscription.add(
       this.productoServicio.agregar(this.producto).subscribe({

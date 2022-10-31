@@ -9,4 +9,5 @@ export class Proveedor {
   direccion: string;
   metodoEnvio?: MetodosEnvios;
   metodoEnvioId: string;
+  costoProveedor: number;
 }

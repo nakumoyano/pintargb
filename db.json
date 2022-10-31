@@ -85,6 +85,36 @@
       "fecha": "2022-10-10",
       "total": 532,
       "id": 15
+    },
+    {
+      "productos": {},
+      "empleadoId": 6,
+      "tipoPagoId": 2,
+      "clienteId": 5,
+      "productoId": 6,
+      "fecha": "2022-10-11",
+      "total": 65900,
+      "id": 16
+    },
+    {
+      "productos": {},
+      "empleadoId": 8,
+      "tipoPagoId": 4,
+      "clienteId": 6,
+      "productoId": 7,
+      "total": 423423,
+      "id": 20,
+      "fecha": "2022-10-10"
+    },
+    {
+      "productos": {},
+      "empleadoId": 6,
+      "tipoPagoId": 3,
+      "clienteId": 6,
+      "productoId": 6,
+      "fecha": "2022-10-14",
+      "total": 12312,
+      "id": 22
     }
   ],
   "detalleVenta": [
@@ -145,7 +175,8 @@
       "direccion": "Entre rios",
       "metodoEnvio": "Entrega por correo",
       "numIdentificaion": "51321",
-      "metodoEnvioId": 2
+      "metodoEnvioId": 2,
+      "costoProveedor": 5000
     },
     {
       "metodoEnvio": {},
@@ -155,7 +186,19 @@
       "telefono": "3547467270",
       "direccion": "dasdas",
       "metodoEnvioId": 3,
-      "id": 3
+      "id": 3,
+      "costoProveedor": 4500
+    },
+    {
+      "metodoEnvio": {},
+      "costoProveedor": 5000,
+      "id": 4,
+      "metodoEnvioId": 1,
+      "nombre": "Braian",
+      "numIdentificaion": "521432",
+      "mail": "braiantur@gmail.com",
+      "telefono": "3512341345",
+      "direccion": "Neuquen 235"
     }
   ],
   "empleado": [
@@ -172,13 +215,13 @@
     },
     {
       "rol": {},
-      "nombre": "Luisa",
+      "nombre": "Loisa",
       "apellido": "Lane",
       "mail": "lanelouis@gmail.com",
       "documento": "3546212052",
       "telefono": "2696412335",
-      "direccion": "Smallville",
-      "rolId": 2,
+      "direccion": "Smallville 54",
+      "rolId": 3,
       "id": 7
     },
     {
@@ -213,6 +256,17 @@
       "direccion": "Alvear 45",
       "rolId": 2,
       "id": 10
+    },
+    {
+      "rol": {},
+      "nombre": "Fabian",
+      "apellido": "Guibaldo",
+      "mail": "fabiguibaldo@gmail.com",
+      "documento": "38564123",
+      "telefono": "35142613512",
+      "direccion": "Entre barrios 546",
+      "rolId": 3,
+      "id": 11
     }
   ],
   "cliente": [
@@ -223,7 +277,7 @@
       "apellido": "Gabriel",
       "mail": "cache@gmail.com",
       "telefono": "2966121231",
-      "direccion": "lejos",
+      "direccion": "Rio negro 45",
       "documento": 1085946
     },
     {
@@ -270,6 +324,15 @@
       "direccion": "Av. Mayo 21",
       "documento": 401532145,
       "id": 9
+    },
+    {
+      "nombre": "Jose Maria",
+      "apellido": "Gallardo",
+      "mail": "josesito@gmail.com",
+      "telefono": "3547521341",
+      "direccion": "Av.Malvinas 45",
+      "documento": 352134612,
+      "id": 10
     }
   ],
   "roles": [
@@ -316,6 +379,20 @@
     {
       "id": 4,
       "tipo": "Mercado Pago"
+    }
+  ],
+  "estados": [
+    {
+      "id": 1,
+      "estado": "En Proceso"
+    },
+    {
+      "id": 2,
+      "estado": "Cancelado"
+    },
+    {
+      "id": 3,
+      "estado": "Terminado"
     }
   ]
 }

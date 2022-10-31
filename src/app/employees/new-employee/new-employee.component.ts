@@ -45,7 +45,13 @@ export class NewEmployeeComponent implements OnInit {
   }
 
   agregar() {
-    Swal.fire({ title: 'Empleado registrado' });
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Empleado registrado!',
+      showConfirmButton: false,
+      timer: 5000,
+    });
 
     this.subscription.add(
       this.empleadoServicio.agregar(this.empleado).subscribe({

@@ -1,29 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Cliente } from 'src/app/models/cliente';
 import { Empleado } from 'src/app/models/empleado';
-import { Producto } from 'src/app/models/producto';
+import { Estado } from 'src/app/models/estado';
+import { OrdenCompra } from 'src/app/models/ordenCompra';
+import { Proveedor } from 'src/app/models/proveedores';
 import { TipoPago } from 'src/app/models/tipoPago';
-import { Venta } from 'src/app/models/venta';
-import { ClienteService } from 'src/app/services/cliente.service';
 import { EmpleadoService } from 'src/app/services/empleado.service';
-import { ProductoService } from 'src/app/services/producto.service';
+import { EstadoService } from 'src/app/services/estado.service';
+import { OrdenCompraService } from 'src/app/services/orden-compra.service';
+import { ProveedorService } from 'src/app/services/proveedor.service';
 import { TipoPagoService } from 'src/app/services/tipo-pago.service';
-import { VentaService } from 'src/app/services/venta.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-nueva-venta',
-  templateUrl: './nueva-venta.component.html',
-  styleUrls: ['./nueva-venta.component.css'],
+  selector: 'app-nueva-compra',
+  templateUrl: './nueva-compra.component.html',
+  styleUrls: ['./nueva-compra.component.css'],
 })
-export class NuevaVentaComponent implements OnInit {
-  venta: Venta = new Venta();
-  tiposPagos: TipoPago[];
+export class NuevaCompraComponent implements OnInit {
+  compra: OrdenCompra = new OrdenCompra();
   employees: Empleado[];
-  clients: Cliente[];
-  products: Producto[];
+  proveedores: Proveedor[];
+  tiposPagos: TipoPago[];
+  estados: Estado[];
 
   check = false;
   checkImage = false;
@@ -32,21 +32,21 @@ export class NuevaVentaComponent implements OnInit {
   private subscription = new Subscription();
 
   constructor(
-    private ventaServicio: VentaService,
+    private compraServicio: OrdenCompraService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private tipoPagoServicio: TipoPagoService,
     private empleadoServicio: EmpleadoService,
-    private clienteServicio: ClienteService,
-    private productoServicio: ProductoService
+    private proveedorServicio: ProveedorService,
+    private estadoService: EstadoService
   ) {}
 
   ngOnInit(): void {
     this.cargar();
     this.cargarTiposPagos();
-    this.cargarClientes();
     this.cargarEmpleados();
-    this.cargarProductos();
+    this.cargarProveedores();
+    this.cargarEstados();
   }
 
   ngOnDestroy(): void {
@@ -62,9 +62,9 @@ export class NuevaVentaComponent implements OnInit {
       timer: 5000,
     });
     this.subscription.add(
-      this.ventaServicio.agregar(this.venta).subscribe({
+      this.compraServicio.agregar(this.compra).subscribe({
         next: () => {
-          this.router.navigate(['nueva-venta']);
+          this.router.navigate(['nueva-compra']);
           location.reload();
         },
         error: () => {
@@ -82,9 +82,9 @@ export class NuevaVentaComponent implements OnInit {
     this.activatedRoute.params.subscribe((e) => {
       let id = e['id'];
       if (id) {
-        this.ventaServicio
+        this.compraServicio
           .obtenerPorId(id)
-          .subscribe((es) => (this.venta = es));
+          .subscribe((es) => (this.compra = es));
       }
     });
   }
@@ -96,12 +96,11 @@ export class NuevaVentaComponent implements OnInit {
       showCancelButton: true,
       confirmButtonText: 'Guardar',
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         Swal.fire('Cambios guardados!', '', 'success');
-        this.ventaServicio
-          .modificar(this.venta)
-          .subscribe((res) => this.router.navigate(['/listado-ventas']));
+        this.compraServicio
+          .modificar(this.compra)
+          .subscribe((res) => this.router.navigate(['/compras-por-hacer']));
       } else if (result.isDenied) {
         Swal.fire('Cambios no guardados', '', 'info');
       }
@@ -109,8 +108,7 @@ export class NuevaVentaComponent implements OnInit {
   }
 
   cargarTiposPagos() {
-    //tipo de pago
-    this.venta = { tipoPago: {} } as Venta;
+    this.compra = { tipoPago: {} } as OrdenCompra;
     this.subscription.add(
       this.tipoPagoServicio.obtener().subscribe({
         next: (respuesta: TipoPago[]) => {
@@ -124,8 +122,7 @@ export class NuevaVentaComponent implements OnInit {
   }
 
   cargarEmpleados() {
-    //empleado
-    this.venta = { empleados: {} } as Venta;
+    this.compra = { empleado: {} } as OrdenCompra;
     this.subscription.add(
       this.empleadoServicio.obtener().subscribe({
         next: (respuesta: Empleado[]) => {
@@ -138,30 +135,29 @@ export class NuevaVentaComponent implements OnInit {
     );
   }
 
-  cargarClientes() {
-    //cliente
-    this.venta = { clientes: {} } as Venta;
+  cargarProveedores() {
+    this.compra = { proveedor: {} } as OrdenCompra;
     this.subscription.add(
-      this.clienteServicio.obtener().subscribe({
-        next: (respuesta: Cliente[]) => {
-          this.clients = respuesta;
+      this.proveedorServicio.obtener().subscribe({
+        next: (respuesta: Proveedor[]) => {
+          this.proveedores = respuesta;
         },
         error: () => {
-          alert('error al obtener los clientes');
+          alert('error al obtener los proveedores');
         },
       })
     );
   }
 
-  cargarProductos() {
-    this.venta = { productos: {} } as Venta;
+  cargarEstados() {
+    this.compra = { estado: {} } as OrdenCompra;
     this.subscription.add(
-      this.productoServicio.obtener().subscribe({
-        next: (respuesta: Producto[]) => {
-          this.products = respuesta;
+      this.estadoService.obtener().subscribe({
+        next: (respuesta: Estado[]) => {
+          this.estados = respuesta;
         },
         error: () => {
-          alert('error al obtener los productos');
+          alert('error al obtener los estados');
         },
       })
     );

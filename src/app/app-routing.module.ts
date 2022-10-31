@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { ClientsListComponent } from './clients/clients-list/clients-list.component';
 import { NewClientsComponent } from './clients/new-clients/new-clients.component';
+import { NuevaCompraComponent } from './compras/nueva-compra/nueva-compra.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 import { NewEmployeeComponent } from './employees/new-employee/new-employee.component';
 import { ErrorComponent } from './error/error.component';
@@ -99,6 +100,14 @@ const routes: Routes = [
     path: 'listado-ventas',
     component: ListadoVentasComponent,
     canActivate: [LoginGuardian],
+  },
+  {
+    path: 'nueva-compra',
+    component: NuevaCompraComponent,
+  },
+  {
+    path: 'nueva-compra/:id',
+    component: NuevaCompraComponent,
   },
   { path: '**', component: ErrorComponent },
 ];

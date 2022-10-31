@@ -22,6 +22,7 @@
               <th scope="col">Teléfono</th>
               <th scope="col">Dirección</th>
               <th scope="col">Modo de envio</th>
+              <th scope="col">Costo de servicio</th>
               <th scope="col">Acción</th>
             </tr>
           </thead>
@@ -33,6 +34,11 @@
               <td>{{ proveedor.telefono }}</td>
               <td>{{ proveedor.direccion }}</td>
               <td>{{ proveedor.metodoEnvio?.tipo }}</td>
+              <td *ngIf="!proveedor.costoProveedor; else elseBlock"></td>
+
+              <ng-template #elseBlock>
+                <td>$ {{ proveedor.costoProveedor }}</td>
+              </ng-template>
 
               <td>
                 <div class="d-flex">

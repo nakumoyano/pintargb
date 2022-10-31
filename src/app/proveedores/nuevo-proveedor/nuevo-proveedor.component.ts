@@ -44,7 +44,13 @@ export class NuevoProveedorComponent implements OnInit {
   }
 
   agregar() {
-    Swal.fire({ title: 'Proveedor registrado' });
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Producto registrado!',
+      showConfirmButton: false,
+      timer: 5000,
+    });
 
     this.subscription.add(
       this.proveedorService.agregar(this.proveedor).subscribe({

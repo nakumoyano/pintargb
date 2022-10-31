@@ -1,0 +1,133 @@
+<app-sidebar></app-sidebar>
+<app-navbar></app-navbar>
+<div id="content">
+  <div class="row">
+    <div class="col-lg-10 col-md-12 mx-auto">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div
+              class="col-sm-6 p-0 d-flex justify-content-lg-start justify-content-center"
+            >
+              <h2 class="ml-lg-12">Nueva Compra</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------- -->
+        <!-- -------------------------------- FORMULARIO ------------------------------------ -->
+
+        <form>
+          <h2>Datos de la Compra</h2>
+          <hr />
+          <div class="col-lg-12 d-flex">
+            <div class="form-group col-lg-6 px-0 justify-content-start">
+              <label for="inputVendedor">Empleado:</label>
+              <select
+                class="form-control"
+                name="empleadoId"
+                id="inputVendedor"
+                [(ngModel)]="compra.empleadoId"
+              >
+                <option
+                  *ngFor="let empleado of employees"
+                  [ngValue]="empleado.id"
+                >
+                  {{ empleado.nombre }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group col-lg-6">
+              <label for="inputPago">Tipo de pago:</label>
+              <select
+                class="form-control custom-select"
+                name="tipoPagoId"
+                id="inputPago"
+                [(ngModel)]="compra.tipoPagoId"
+              >
+                <option *ngFor="let tipo of tiposPagos" [ngValue]="tipo.id">
+                  {{ tipo.tipo }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-12 d-flex mt-3">
+            <div class="form-group col-lg-6 px-0 justify-content-start">
+              <label for="inputCliente">Proveedor:</label>
+              <select
+                class="form-control"
+                name="clienteId"
+                id="inputCliente"
+                [(ngModel)]="compra.proveedorId"
+              >
+                <option
+                  *ngFor="let proveedor of proveedores"
+                  [ngValue]="proveedor.id"
+                >
+                  {{ proveedor.nombre }}
+                </option>
+              </select>
+            </div>
+            <div class="col-lg-6 form-group">
+              <label for="inputCompra">Estado de la compra:</label>
+              <select
+                class="form-control"
+                name="estadoId"
+                id="inputCompra"
+                [(ngModel)]="compra.estadoId"
+              >
+                <option *ngFor="let state of estados" [ngValue]="state.id">
+                  {{ state.estado }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-12 d-flex mt-3">
+            <div class="form-group col-lg-6 px-0 justify-content-start">
+              <label for="inputFecha">Fecha de la compra:</label>
+              <input
+                type="date"
+                class="form-control"
+                id="inputFecha"
+                name="fecha"
+                [(ngModel)]="compra.fechaCompra"
+                required
+              />
+            </div>
+            <div class="form-group col-6">
+              <label for="inputImporte">Importe total:</label>
+              <div class="d-flex">
+                <span class="p-total pt-2">$</span>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inputImporte"
+                  name="total"
+                  placeholder="Ingrese el importe total de la venta"
+                  required
+                  [(ngModel)]="compra.total"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="col-12">
+          <button
+            class="btn btn-success mb-3"
+            role="button"
+            (click)="agregar()"
+            *ngIf="!compra.id; else elseBlock"
+          >
+            Cargar compra
+          </button>
+
+          <ng-template #elseBlock>
+            <button class="btn btn-success mb-3" (click)="update()">
+              Actualizar
+            </button>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -16,7 +16,7 @@ export class ListaProveedoresComponent implements OnInit {
   @Input() proveedor: Proveedor;
 
   listado: Proveedor[];
-
+  plata: boolean = true;
   private subscription = new Subscription();
 
   constructor(
@@ -28,28 +28,12 @@ export class ListaProveedoresComponent implements OnInit {
 
   ngOnInit(): void {
     this.actualizarListado();
+    this.plataCosto();
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
-  // actualizarListado() {
-  //   this.subscription.add(
-  //     this.proveedorServicio.obtener().subscribe({
-  //       next: (respuesta: Proveedor[]) => {
-  //         this.listado = respuesta;
-  //       },
-  //       error: () => {
-  //         Swal.fire({
-  //           icon: 'error',
-  //           title: 'Oops...',
-  //           text: 'Error al conectar con la Api!',
-  //         });
-  //       },
-  //     })
-  //   );
-  // }
 
   actualizarListado() {
     this.subscription.add(
@@ -99,5 +83,9 @@ export class ListaProveedoresComponent implements OnInit {
         },
       })
     );
+  }
+
+  plataCosto() {
+    return this.plata != this.plata;
   }
 }

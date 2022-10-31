@@ -30,6 +30,9 @@ import { NuevaVentaComponent } from './ventas/nueva-venta/nueva-venta.component'
 import { ListadoVentasComponent } from './ventas/listado-ventas/listado-ventas.component';
 import { EliminarVentaComponent } from './ventas/eliminar-venta/eliminar-venta.component';
 import { EliminarProductoComponent } from './productos/eliminar-producto/eliminar-producto.component';
+import { NuevaCompraComponent } from './compras/nueva-compra/nueva-compra.component';
+import { ComprasPorHacerComponent } from './compras/compras-por-hacer/compras-por-hacer.component';
+import { EliminarCompraComponent } from './compras/eliminar-compra/eliminar-compra.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +58,9 @@ import { EliminarProductoComponent } from './productos/eliminar-producto/elimina
     ListadoVentasComponent,
     EliminarVentaComponent,
     EliminarProductoComponent,
+    NuevaCompraComponent,
+    ComprasPorHacerComponent,
+    EliminarCompraComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [LoginService, CookieService, LoginGuardian],

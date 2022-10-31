@@ -119,46 +119,6 @@ export class ListadoVentasComponent implements OnInit {
         },
       })
     );
-    // this.subscription.add(
-    //   this.empleadoServicio.obtener().subscribe({
-    //     next: (employees: Empleado[]) => {
-    //       this.clienteService.obtener().subscribe({
-    //         next: (clients: Cliente[]) => {
-    //           this.tipoPagoService.obtener().subscribe({
-    //             next: (pagos: TipoPago[]) => {
-    //               this.ventaServicio.obtener().subscribe({
-    //                 next: (respuesta: Venta[]) => {
-    //                   for (const venta of respuesta) {
-    //                     const empleadoIndex = employees.findIndex(
-    //                       (x) => x.id === venta.empleadoId
-    //                     );
-    //                     const clienteIndex = clients.findIndex(
-    //                       (xx) => xx.id === venta.clienteId
-    //                     );
-    //                     const pagoIndex = pagos.findIndex(
-    //                       (xxx) => xxx.id === venta.tipoPagoId
-    //                     );
-    //                     venta.empleados = employees[empleadoIndex];
-    //                     venta.clientes = clients[clienteIndex];
-    //                     venta.tipoPago = pagos[pagoIndex];
-    //                   }
-    //                   this.listado = respuesta;
-    //                 },
-    //                 error: (e) => {
-    //                   Swal.fire({
-    //                     icon: 'error',
-    //                     title: 'Oops...',
-    //                     text: 'Error al conectar con la Api!',
-    //                   });
-    //                 },
-    //               });
-    //             },
-    //           });
-    //         },
-    //       });
-    //     },
-    //   })
-    // );
   }
 
   actualizarListadoCliente() {
