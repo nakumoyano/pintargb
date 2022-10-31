@@ -167,9 +167,9 @@ a:focus {
   display: block;
 }
 
-#sidebar:hover::-webkit-scrollbar {
+/* #sidebar:hover::-webkit-scrollbar {
   display: block;
-}
+} */
 
 #sidebar .sidebar-header {
   padding: 20px;

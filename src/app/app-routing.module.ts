@@ -14,6 +14,8 @@ import { ListadoProductosComponent } from './productos/listado-productos/listado
 import { NuevoProductoComponent } from './productos/nuevo-producto/nuevo-producto.component';
 import { ListaProveedoresComponent } from './proveedores/lista-proveedores/lista-proveedores.component';
 import { NuevoProveedorComponent } from './proveedores/nuevo-proveedor/nuevo-proveedor.component';
+import { ListadoVentasComponent } from './ventas/listado-ventas/listado-ventas.component';
+import { NuevaVentaComponent } from './ventas/nueva-venta/nueva-venta.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -78,6 +80,21 @@ const routes: Routes = [
     canActivate: [LoginGuardian],
   },
   { path: 'ayuda', component: AyudaComponent, canActivate: [LoginGuardian] },
+  {
+    path: 'nueva-venta',
+    component: NuevaVentaComponent,
+    canActivate: [LoginGuardian],
+  },
+  {
+    path: 'nueva-venta/:id',
+    component: NuevaVentaComponent,
+    canActivate: [LoginGuardian],
+  },
+  {
+    path: 'listado-ventas',
+    component: ListadoVentasComponent,
+    canActivate: [LoginGuardian],
+  },
   { path: '**', component: ErrorComponent },
 ];
 

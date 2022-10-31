@@ -217,6 +217,40 @@
       </ul>
     </li>
 
+    <!-- ------------------------------------ VENTAS -->
+    <li class="dropdown">
+      <a
+        href="#idVenta"
+        data-toggle="collapse"
+        aria-expanded="false"
+        [ngClass]="
+          visibleEDeposito ? 'd-none' : 'dropdown-toggle d-flex enlace'
+        "
+      >
+        <i class="fa-solid fa-money-bill"></i
+        ><span class="enlace">Ventas </span>
+      </a>
+      <ul class="collapse list-unstyled menu pl-3" id="idVenta">
+        <li>
+          <a
+            href=""
+            class="d-flex enlace"
+            routerLink="/nueva-venta"
+            routerLinkActive="active"
+            ><i class="fa-solid fa-money-check-dollar"></i>Nueva Venta</a
+          >
+        </li>
+        <li>
+          <a
+            href=""
+            class="d-flex enlace"
+            routerLink="/listado-ventas"
+            routerLinkActive="active"
+            ><i class="fa-solid fa-list"></i>Listado ventas</a
+          >
+        </li>
+      </ul>
+    </li>
     <!-- -------------------------------- AYUDA -->
     <li class="desactive">
       <a

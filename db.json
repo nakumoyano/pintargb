@@ -37,20 +37,39 @@
   ],
   "venta": [
     {
-      "id": 1,
-      "tipoPago": "tipoPago 1",
-      "empleadoId": 1,
-      "clienteId": 1,
-      "fecha": 1667061560,
-      "total": 61
+      "empleados": {},
+      "empleadoId": 6,
+      "tipoPagoId": 1,
+      "clienteId": 4,
+      "fecha": "2022-10-18",
+      "total": 3333,
+      "id": 8
     },
     {
-      "id": 2,
-      "tipoPago": "tipoPago 2",
-      "empleadoId": 2,
-      "clienteId": 2,
-      "fecha": 1667061500,
-      "total": 6
+      "empleados": {},
+      "empleadoId": 7,
+      "tipoPagoId": 2,
+      "clienteId": 4,
+      "fecha": "2022-10-12",
+      "total": 5000,
+      "id": 9
+    },
+    {
+      "empleados": {},
+      "empleadoId": 8,
+      "tipoPagoId": 3,
+      "clienteId": 4,
+      "fecha": "2022-11-03",
+      "total": 4251,
+      "id": 10
+    },
+    {
+      "empleados": {},
+      "empleadoId": 6,
+      "clienteId": 4,
+      "fecha": "2022-10-03",
+      "total": 12354,
+      "id": 11
     }
   ],
   "detalleVenta": [
@@ -86,23 +105,16 @@
       "mail": "ulricolindo@gmail.com",
       "telefono": 35474213,
       "direccion": "Entre rios",
-      "metodoEnvio": "Entrega por correo"
-    },
-    {
-      "metodoEnvio": {},
-      "nombre": "dsad",
-      "mail": "dasd",
-      "telefono": "dsad",
-      "direccion": "dasd",
-      "metodoEnvioId": 2,
-      "id": 2
+      "metodoEnvio": "Entrega por correo",
+      "numIdentificaion": "51321",
+      "metodoEnvioId": 2
     },
     {
       "metodoEnvio": {},
       "nombre": "nahuel",
       "numIdentificaion": "12313",
       "mail": "323",
-      "telefono": "DASDS",
+      "telefono": "3547467270",
       "direccion": "dasdas",
       "metodoEnvioId": 3,
       "id": 3
@@ -110,35 +122,9 @@
   ],
   "empleado": [
     {
-      "nombre": "sad",
-      "apellido": "asd",
-      "mail": "asd",
-      "telefono": "dasd",
-      "direccion": "dasd",
-      "id": 3
-    },
-    {
-      "nombre": "naku",
-      "apellido": "moyano",
-      "mail": "naku@asd.com",
-      "telefono": "354741251",
-      "direccion": "entre rios 156341",
-      "rol": 3,
-      "id": 4
-    },
-    {
-      "nombre": "sa",
-      "apellido": "sa",
-      "mail": "sa",
-      "telefono": "sa",
-      "direccion": "sa",
-      "rol": 1,
-      "id": 5
-    },
-    {
       "rol": {},
       "rolId": 2,
-      "nombre": "Facunfo",
+      "nombre": "Facundo",
       "apellido": "Gomez",
       "mail": "facugomez@gmail.com",
       "documento": "42456123",
@@ -156,6 +142,17 @@
       "direccion": "Smallville",
       "rolId": 2,
       "id": 7
+    },
+    {
+      "rol": {},
+      "nombre": "Oscar",
+      "apellido": "Gabriel",
+      "mail": "oski@gmail.com",
+      "documento": "102564123",
+      "telefono": "29654135",
+      "direccion": "España 123",
+      "rolId": 1,
+      "id": 8
     }
   ],
   "cliente": [
@@ -196,6 +193,24 @@
     {
       "id": 3,
       "tipo": "Entrega por empresa privada"
+    }
+  ],
+  "tipoPago": [
+    {
+      "id": 1,
+      "tipo": "Contado"
+    },
+    {
+      "id": 2,
+      "tipo": "Tarjeta de Crédito"
+    },
+    {
+      "id": 3,
+      "tipo": "Tarjeta de Débito"
+    },
+    {
+      "id": 4,
+      "tipo": "Mercado Pago"
     }
   ]
 }
