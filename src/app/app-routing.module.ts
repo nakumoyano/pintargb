@@ -18,6 +18,7 @@ import { ListaProveedoresComponent } from './proveedores/lista-proveedores/lista
 import { NuevoProveedorComponent } from './proveedores/nuevo-proveedor/nuevo-proveedor.component';
 import { ListadoVentasComponent } from './ventas/listado-ventas/listado-ventas.component';
 import { NuevaVentaComponent } from './ventas/nueva-venta/nueva-venta.component';
+import { ReportesVentasComponent } from './ventas/reportes-ventas/reportes-ventas.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -113,6 +114,10 @@ const routes: Routes = [
   {
     path: 'compras-por-hacer',
     component: ComprasPorHacerComponent,
+  },
+  {
+    path: 'reporte-ventas',
+    component: ReportesVentasComponent,
   },
   { path: '**', component: ErrorComponent },
 ];

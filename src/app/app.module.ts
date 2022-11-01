@@ -34,6 +34,8 @@ import { NuevaCompraComponent } from './compras/nueva-compra/nueva-compra.compon
 import { ComprasPorHacerComponent } from './compras/compras-por-hacer/compras-por-hacer.component';
 import { EliminarCompraComponent } from './compras/eliminar-compra/eliminar-compra.component';
 import { NgxPrintModule } from 'ngx-print';
+import { ReportesVentasComponent } from './ventas/reportes-ventas/reportes-ventas.component';
+import { EliminarReporteVentaComponent } from './ventas/eliminar-reporte-venta/eliminar-reporte-venta.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +64,8 @@ import { NgxPrintModule } from 'ngx-print';
     NuevaCompraComponent,
     ComprasPorHacerComponent,
     EliminarCompraComponent,
+    ReportesVentasComponent,
+    EliminarReporteVentaComponent,
   ],
   imports: [
     BrowserModule,

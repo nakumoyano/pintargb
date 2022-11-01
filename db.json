@@ -33,7 +33,7 @@
       "empleadoId": 6,
       "clienteId": 8,
       "fecha": "2022-10-03",
-      "total": 12354,
+      "total": 21000,
       "id": 11,
       "tipoPagoId": 2,
       "productoId": 7
@@ -75,7 +75,7 @@
       "clienteId": 8,
       "productoId": 6,
       "fecha": "2022-10-10",
-      "total": 532,
+      "total": 5320,
       "id": 15
     },
     {
@@ -107,6 +107,16 @@
       "fecha": "2022-10-14",
       "total": 12312,
       "id": 22
+    },
+    {
+      "productos": {},
+      "empleadoId": 7,
+      "tipoPagoId": 3,
+      "clienteId": 8,
+      "productoId": 9,
+      "fecha": "2022-11-01",
+      "total": 15000,
+      "id": 23
     }
   ],
   "detalleVenta": [
