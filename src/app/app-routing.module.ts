@@ -5,6 +5,7 @@ import { ClientsListComponent } from './clients/clients-list/clients-list.compon
 import { NewClientsComponent } from './clients/new-clients/new-clients.component';
 import { ComprasPorHacerComponent } from './compras/compras-por-hacer/compras-por-hacer.component';
 import { NuevaCompraComponent } from './compras/nueva-compra/nueva-compra.component';
+import { ReporteComprasComponent } from './compras/reporte-compras/reporte-compras.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 import { NewEmployeeComponent } from './employees/new-employee/new-employee.component';
 import { ErrorComponent } from './error/error.component';
@@ -120,6 +121,10 @@ const routes: Routes = [
   {
     path: 'compras-por-hacer',
     component: ComprasPorHacerComponent,
+  },
+  {
+    path: 'reporte-compras',
+    component: ReporteComprasComponent,
   },
   {
     path: 'reporte-ventas',
