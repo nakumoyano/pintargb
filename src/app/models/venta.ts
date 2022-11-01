@@ -5,7 +5,7 @@ import { TipoPago } from './tipoPago';
 
 export class Venta {
   id: string;
-  tipoPago?: TipoPago;
+  tipoPago: TipoPago;
   tipoPagoId: string;
   empleados?: Empleado;
   empleadoId: string;

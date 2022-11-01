@@ -100,7 +100,9 @@ export class ListadoVentasComponent implements OnInit {
                             venta.tipoPago = pagos[pagoIndex];
                             venta.productos = products[productoIndex];
                           }
+                          console.log(respuesta);
                           this.listado = respuesta;
+                          // this.teamJSON = respuesta;
                         },
                         error: (e) => {
                           Swal.fire({

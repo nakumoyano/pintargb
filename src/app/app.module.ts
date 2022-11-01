@@ -33,6 +33,7 @@ import { EliminarProductoComponent } from './productos/eliminar-producto/elimina
 import { NuevaCompraComponent } from './compras/nueva-compra/nueva-compra.component';
 import { ComprasPorHacerComponent } from './compras/compras-por-hacer/compras-por-hacer.component';
 import { EliminarCompraComponent } from './compras/eliminar-compra/eliminar-compra.component';
+import { NgxPrintModule } from 'ngx-print';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +63,13 @@ import { EliminarCompraComponent } from './compras/eliminar-compra/eliminar-comp
     ComprasPorHacerComponent,
     EliminarCompraComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    NgxPrintModule,
+  ],
   providers: [LoginService, CookieService, LoginGuardian],
   bootstrap: [AppComponent],
 })

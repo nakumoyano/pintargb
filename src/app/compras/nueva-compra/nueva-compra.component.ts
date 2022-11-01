@@ -57,7 +57,7 @@ export class NuevaCompraComponent implements OnInit {
     Swal.fire({
       position: 'center',
       icon: 'success',
-      title: 'Venta registrada!',
+      title: 'Compra registrada!',
       showConfirmButton: false,
       timer: 5000,
     });

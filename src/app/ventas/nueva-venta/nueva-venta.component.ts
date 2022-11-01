@@ -170,6 +170,7 @@ export class NuevaVentaComponent implements OnInit {
   checkFunction() {
     this.check = !this.check;
   }
+
   checkImageFunction() {
     this.checkImage = !this.checkImage;
   }

@@ -19,6 +19,8 @@ export class ListaProveedoresComponent implements OnInit {
   plata: boolean = true;
   private subscription = new Subscription();
 
+  visible: boolean = false;
+
   constructor(
     private proveedorServicio: ProveedorService,
     private router: Router,
@@ -87,5 +89,9 @@ export class ListaProveedoresComponent implements OnInit {
 
   plataCosto() {
     return this.plata != this.plata;
+  }
+
+  verBotones() {
+    return this.visible != this.visible;
   }
 }
