@@ -75,7 +75,7 @@
       "clienteId": 8,
       "productoId": 6,
       "fecha": "2022-10-10",
-      "total": 5320,
+      "total": 1320,
       "id": 15
     },
     {
@@ -145,7 +145,7 @@
     {
       "nombre": "Stanley Taladro",
       "detalle": "Atornillador Inalámbrico",
-      "stock": 50,
+      "stock": 3,
       "id": 6
     },
     {

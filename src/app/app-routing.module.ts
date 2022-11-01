@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { RolesGuard } from './login/roles.guard';
 import { ListadoProductosComponent } from './productos/listado-productos/listado-productos.component';
 import { NuevoProductoComponent } from './productos/nuevo-producto/nuevo-producto.component';
+import { ReporteProductoComponent } from './productos/reporte-producto/reporte-producto.component';
 import { ListaProveedoresComponent } from './proveedores/lista-proveedores/lista-proveedores.component';
 import { NuevoProveedorComponent } from './proveedores/nuevo-proveedor/nuevo-proveedor.component';
 import { ListadoVentasComponent } from './ventas/listado-ventas/listado-ventas.component';
@@ -85,6 +86,11 @@ const routes: Routes = [
   {
     path: 'listado-productos',
     component: ListadoProductosComponent,
+    canActivate: [LoginGuardian],
+  },
+  {
+    path: 'reporte-productos',
+    component: ReporteProductoComponent,
     canActivate: [LoginGuardian],
   },
   { path: 'ayuda', component: AyudaComponent, canActivate: [LoginGuardian] },

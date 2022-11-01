@@ -36,6 +36,7 @@ import { EliminarCompraComponent } from './compras/eliminar-compra/eliminar-comp
 import { NgxPrintModule } from 'ngx-print';
 import { ReportesVentasComponent } from './ventas/reportes-ventas/reportes-ventas.component';
 import { EliminarReporteVentaComponent } from './ventas/eliminar-reporte-venta/eliminar-reporte-venta.component';
+import { ReporteProductoComponent } from './productos/reporte-producto/reporte-producto.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +67,7 @@ import { EliminarReporteVentaComponent } from './ventas/eliminar-reporte-venta/e
     EliminarCompraComponent,
     ReportesVentasComponent,
     EliminarReporteVentaComponent,
+    ReporteProductoComponent,
   ],
   imports: [
     BrowserModule,
