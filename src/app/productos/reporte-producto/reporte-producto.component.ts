@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ChartData } from 'chart.js';
 import { Subscription } from 'rxjs';
 import { ReporteProducto } from 'src/app/models/reporteProducto';
 import { ReporteProductoService } from 'src/app/services/reporte-producto.service';
@@ -15,6 +16,9 @@ export class ReporteProductoComponent implements OnInit {
 
   listado: ReporteProducto[];
 
+  datos: ChartData<'pie', number[], string>;
+  legends: string[] = ['Productos'];
+
   private subscription = new Subscription();
 
   constructor(
@@ -24,6 +28,7 @@ export class ReporteProductoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.datosReporteGrafico();
     this.actualizarListado();
   }
 
@@ -70,6 +75,33 @@ export class ReporteProductoComponent implements OnInit {
             },
           });
         },
+      })
+    );
+  }
+
+  datosReporteGrafico() {
+    this.subscription.add(
+      this.reporteProductoService.obtener().subscribe({
+        next: (respuesta: ReporteProducto[]) => {
+          this.datos = {
+            labels: this.legends,
+            datasets: [
+              {
+                label: 'Marca',
+                data: [respuesta.filter((x) => x.nombre).length],
+              },
+              {
+                label: 'Detalle',
+                data: [respuesta.filter((x) => x.detalle).length],
+              },
+              {
+                label: 'Stock',
+                data: [respuesta.filter((x) => x.nombre).length],
+              },
+            ],
+          };
+        },
+        error: () => alert('api no responde'),
       })
     );
   }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ChartData } from 'chart.js';
 import { Subscription } from 'rxjs';
 import { ReporteProveedor } from 'src/app/models/reporteProveedor';
 import { ReporteProveedoresService } from 'src/app/services/reporte-proveedores.service';
@@ -15,6 +16,9 @@ export class ReporteProveedoresComponent implements OnInit {
 
   listado: ReporteProveedor[];
 
+  datos: ChartData<'pie'>;
+  legends: string[] = ['Proveedores'];
+
   private subscription = new Subscription();
 
   constructor(
@@ -25,6 +29,7 @@ export class ReporteProveedoresComponent implements OnInit {
 
   ngOnInit(): void {
     this.actualizarListado();
+    this.datosReporteGrafico();
   }
 
   ngOnDestroy(): void {
@@ -70,6 +75,33 @@ export class ReporteProveedoresComponent implements OnInit {
             },
           });
         },
+      })
+    );
+  }
+
+  datosReporteGrafico() {
+    this.subscription.add(
+      this.reporteService.obtener().subscribe({
+        next: (respuesta: ReporteProveedor[]) => {
+          this.datos = {
+            labels: this.legends,
+            datasets: [
+              {
+                data: [respuesta.filter((x) => x.metodoEnvioId).length],
+                label: 'Modo de envios',
+              },
+              {
+                data: [respuesta.filter((x) => x.nombre).length],
+                label: 'Empleados',
+              },
+              {
+                data: [respuesta.filter((x) => x.costoProveedor).length],
+                label: 'Costos del proveedor',
+              },
+            ],
+          };
+        },
+        error: () => alert('api no responde'),
       })
     );
   }

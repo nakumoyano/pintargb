@@ -47,6 +47,7 @@ import { FiltroVentasPipe } from './pipes/filtro-ventas.pipe';
 import { ReporteClientesComponent } from './clients/reporte-clientes/reporte-clientes.component';
 import { ReporteEmpleadosComponent } from './employees/reporte-empleados/reporte-empleados.component';
 import { ReporteProveedoresComponent } from './proveedores/reporte-proveedores/reporte-proveedores.component';
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -96,6 +97,7 @@ import { ReporteProveedoresComponent } from './proveedores/reporte-proveedores/r
     FormsModule,
     NgxPrintModule,
     ReactiveFormsModule,
+    NgChartsModule,
   ],
   providers: [LoginService, CookieService, LoginGuardian],
   bootstrap: [AppComponent],

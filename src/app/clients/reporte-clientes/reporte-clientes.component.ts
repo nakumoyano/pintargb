@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ChartData } from 'chart.js';
 import { Subscription } from 'rxjs';
 import { ReporteCliente } from 'src/app/models/reporteCliente';
 import { ReporteClientesService } from 'src/app/services/reporte-clientes.service';
@@ -15,6 +16,9 @@ export class ReporteClientesComponent implements OnInit {
 
   listado: ReporteCliente[];
 
+  datos: ChartData<'pie', number[], string>;
+  legends: string[] = ['Clientes'];
+
   private subscription = new Subscription();
 
   constructor(
@@ -25,6 +29,7 @@ export class ReporteClientesComponent implements OnInit {
 
   ngOnInit(): void {
     this.actualizarListado();
+    this.datosReporteGrafico();
   }
 
   ngOnDestroy(): void {
@@ -70,6 +75,25 @@ export class ReporteClientesComponent implements OnInit {
             },
           });
         },
+      })
+    );
+  }
+
+  datosReporteGrafico() {
+    this.subscription.add(
+      this.reporteService.obtener().subscribe({
+        next: (respuesta: ReporteCliente[]) => {
+          this.datos = {
+            labels: this.legends,
+            datasets: [
+              {
+                label: 'Clientes',
+                data: [respuesta.filter((x) => x.nombre).length],
+              },
+            ],
+          };
+        },
+        error: () => alert('api no responde'),
       })
     );
   }

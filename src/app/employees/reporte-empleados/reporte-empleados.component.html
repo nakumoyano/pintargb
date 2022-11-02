@@ -20,6 +20,7 @@
               <th scope="col">Teléfono</th>
               <th scope="col">Dirección</th>
               <th scope="col">Documento</th>
+              <th scope="col">Rol</th>
               <th scope="col">Acción</th>
             </tr>
           </thead>
@@ -31,6 +32,7 @@
               <td>{{ empleado.telefono }}</td>
               <td>{{ empleado.direccion }}</td>
               <td>{{ empleado.documento }}</td>
+              <td>Encargado de Compras</td>
               <td>
                 <div class="d-flex">
                   <button
@@ -51,6 +53,13 @@
         <button class="btn btn-primary my-2" printSectionId="demo" ngxPrint>
           Imprimir
         </button>
+      </div>
+    </div>
+    <div class="row ml-5">
+      <div class="col-lg-12 ml-5 px-4">
+        <div class="" style="width: 300px">
+          <canvas baseChart type="bar" [data]="datos"></canvas>
+        </div>
       </div>
     </div>
   </div>
