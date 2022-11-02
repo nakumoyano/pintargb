@@ -33,7 +33,7 @@ export class NuevoProveedorComponent implements OnInit {
           this.metodos = respuesta;
         },
         error: () => {
-          alert('error al obtener los modos de nevios');
+          alert('error al obtener los modos de envios');
         },
       })
     );
@@ -47,7 +47,7 @@ export class NuevoProveedorComponent implements OnInit {
     Swal.fire({
       position: 'center',
       icon: 'success',
-      title: 'Producto registrado!',
+      title: 'Proveedor registrado!',
       showConfirmButton: false,
       timer: 5000,
     });

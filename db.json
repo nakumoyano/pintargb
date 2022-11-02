@@ -220,7 +220,7 @@
       "metodoEnvio": {},
       "nombre": "Nahuel",
       "numIdentificaion": "12313",
-      "mail": "323",
+      "mail": "nahuproveedor@gmail.com",
       "telefono": "3547467270",
       "direccion": "dasdas",
       "metodoEnvioId": 3,
@@ -237,6 +237,28 @@
       "mail": "braiantur@gmail.com",
       "telefono": "3512341345",
       "direccion": "Neuquen 235"
+    },
+    {
+      "metodoEnvio": {},
+      "nombre": "Pedro",
+      "numIdentificaion": "218561",
+      "mail": "pedritobob@gmail.com",
+      "telefono": "3514251324",
+      "direccion": "Esmeralda 85",
+      "metodoEnvioId": 3,
+      "costoProveedor": 3500,
+      "id": 5
+    },
+    {
+      "metodoEnvio": {},
+      "nombre": "Esteban",
+      "numIdentificaion": "21543",
+      "mail": "estebanproveedor@gmail.com",
+      "telefono": "35475214523",
+      "direccion": "Chacabuco 1523",
+      "metodoEnvioId": 1,
+      "costoProveedor": 3700,
+      "id": 6
     }
   ],
   "empleado": [
@@ -371,6 +393,15 @@
       "direccion": "Av.Malvinas 45",
       "documento": 352134612,
       "id": 10
+    },
+    {
+      "nombre": "Jose",
+      "apellido": "Guaymayen",
+      "mail": "josesitoguay@gmail.com",
+      "telefono": "3547462513",
+      "direccion": "Tupan 58",
+      "documento": "45008785",
+      "id": 11
     }
   ],
   "roles": [

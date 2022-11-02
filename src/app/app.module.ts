@@ -44,6 +44,9 @@ import { FiltroProductosPipe } from './pipes/filtro-productos.pipe';
 import { FiltroEmpleadosPipe } from './pipes/filtro-empleados.pipe';
 import { FiltroProveedoresPipe } from './pipes/filtro-proveedores.pipe';
 import { FiltroVentasPipe } from './pipes/filtro-ventas.pipe';
+import { ReporteClientesComponent } from './clients/reporte-clientes/reporte-clientes.component';
+import { ReporteEmpleadosComponent } from './employees/reporte-empleados/reporte-empleados.component';
+import { ReporteProveedoresComponent } from './proveedores/reporte-proveedores/reporte-proveedores.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,6 +85,9 @@ import { FiltroVentasPipe } from './pipes/filtro-ventas.pipe';
     FiltroEmpleadosPipe,
     FiltroProveedoresPipe,
     FiltroVentasPipe,
+    ReporteClientesComponent,
+    ReporteEmpleadosComponent,
+    ReporteProveedoresComponent,
   ],
   imports: [
     BrowserModule,

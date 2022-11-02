@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { ClientsListComponent } from './clients/clients-list/clients-list.component';
 import { NewClientsComponent } from './clients/new-clients/new-clients.component';
+import { ReporteClientesComponent } from './clients/reporte-clientes/reporte-clientes.component';
 import { ComprasPorHacerComponent } from './compras/compras-por-hacer/compras-por-hacer.component';
 import { NuevaCompraComponent } from './compras/nueva-compra/nueva-compra.component';
 import { ReporteComprasComponent } from './compras/reporte-compras/reporte-compras.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 import { NewEmployeeComponent } from './employees/new-employee/new-employee.component';
+import { ReporteEmpleadosComponent } from './employees/reporte-empleados/reporte-empleados.component';
 import { ErrorComponent } from './error/error.component';
 import { EstadisticasComponent } from './estadisticas/estadisticas.component';
 import { LoginGuardian } from './login/login-guardian';
@@ -18,6 +20,7 @@ import { NuevoProductoComponent } from './productos/nuevo-producto/nuevo-product
 import { ReporteProductoComponent } from './productos/reporte-producto/reporte-producto.component';
 import { ListaProveedoresComponent } from './proveedores/lista-proveedores/lista-proveedores.component';
 import { NuevoProveedorComponent } from './proveedores/nuevo-proveedor/nuevo-proveedor.component';
+import { ReporteProveedoresComponent } from './proveedores/reporte-proveedores/reporte-proveedores.component';
 import { ListadoVentasComponent } from './ventas/listado-ventas/listado-ventas.component';
 import { NuevaVentaComponent } from './ventas/nueva-venta/nueva-venta.component';
 import { ReportesVentasComponent } from './ventas/reportes-ventas/reportes-ventas.component';
@@ -129,6 +132,18 @@ const routes: Routes = [
   {
     path: 'reporte-ventas',
     component: ReportesVentasComponent,
+  },
+  {
+    path: 'reporte-clientes',
+    component: ReporteClientesComponent,
+  },
+  {
+    path: 'reporte-empleados',
+    component: ReporteEmpleadosComponent,
+  },
+  {
+    path: 'reporte-proveedores',
+    component: ReporteProveedoresComponent,
   },
   { path: '**', component: ErrorComponent },
 ];
