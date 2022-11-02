@@ -15,6 +15,8 @@ import Swal from 'sweetalert2';
 export class ListaProveedoresComponent implements OnInit {
   @Input() proveedor: Proveedor;
 
+  filterpost = '';
+
   listado: Proveedor[];
   plata: boolean = true;
   private subscription = new Subscription();

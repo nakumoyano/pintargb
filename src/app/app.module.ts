@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NewClientsComponent } from './clients/new-clients/new-clients.component';
 import { NewEmployeeComponent } from './employees/new-employee/new-employee.component';
@@ -38,6 +38,12 @@ import { ReportesVentasComponent } from './ventas/reportes-ventas/reportes-venta
 import { EliminarReporteVentaComponent } from './ventas/eliminar-reporte-venta/eliminar-reporte-venta.component';
 import { ReporteProductoComponent } from './productos/reporte-producto/reporte-producto.component';
 import { ReporteComprasComponent } from './compras/reporte-compras/reporte-compras.component';
+import { FiltroClientesPipe } from './pipes/filtro-clientes.pipe';
+import { FiltroComprasPipe } from './pipes/filtro-compras.pipe';
+import { FiltroProductosPipe } from './pipes/filtro-productos.pipe';
+import { FiltroEmpleadosPipe } from './pipes/filtro-empleados.pipe';
+import { FiltroProveedoresPipe } from './pipes/filtro-proveedores.pipe';
+import { FiltroVentasPipe } from './pipes/filtro-ventas.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,6 +76,12 @@ import { ReporteComprasComponent } from './compras/reporte-compras/reporte-compr
     EliminarReporteVentaComponent,
     ReporteProductoComponent,
     ReporteComprasComponent,
+    FiltroClientesPipe,
+    FiltroComprasPipe,
+    FiltroProductosPipe,
+    FiltroEmpleadosPipe,
+    FiltroProveedoresPipe,
+    FiltroVentasPipe,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +89,7 @@ import { ReporteComprasComponent } from './compras/reporte-compras/reporte-compr
     HttpClientModule,
     FormsModule,
     NgxPrintModule,
+    ReactiveFormsModule,
   ],
   providers: [LoginService, CookieService, LoginGuardian],
   bootstrap: [AppComponent],

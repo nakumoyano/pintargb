@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { debounceTime, Subscription } from 'rxjs';
 import { Cliente } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
 import Swal from 'sweetalert2';
@@ -10,10 +11,14 @@ declare const $: any;
   templateUrl: './clients-list.component.html',
   styleUrls: ['./clients-list.component.css'],
 })
-export class ClientsListComponent implements OnInit, AfterViewInit {
+export class ClientsListComponent implements OnInit {
   @Input() cliente: Cliente;
 
+  filterCliente = '';
+
   listado: Cliente[];
+
+  control = new FormControl();
 
   private subscription = new Subscription();
 
@@ -23,13 +28,9 @@ export class ClientsListComponent implements OnInit, AfterViewInit {
     private activatedRoute: ActivatedRoute
   ) {}
 
-  ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
-    $('#example').DataTable();
-  }
-
   ngOnInit(): void {
     this.actualizarListado();
+    this.observserChangeSerach();
   }
 
   ngOnDestroy(): void {
@@ -77,5 +78,11 @@ export class ClientsListComponent implements OnInit, AfterViewInit {
         },
       })
     );
+  }
+
+  observserChangeSerach() {
+    this.control.valueChanges.pipe(debounceTime(800)).subscribe((query) => {
+      console.log(query);
+    });
   }
 }

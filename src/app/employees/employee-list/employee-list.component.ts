@@ -14,6 +14,8 @@ import Swal from 'sweetalert2';
 export class EmployeeListComponent implements OnInit {
   @Input() empleado: Empleado;
 
+  filterpost = '';
+
   listado: Empleado[];
 
   private subscription = new Subscription();
@@ -32,23 +34,6 @@ export class EmployeeListComponent implements OnInit {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
-  // actualizarListado() {
-  //   this.subscription.add(
-  //     this.empleadoServicio.obtener().subscribe({
-  //       next: (respuesta: Empleado[]) => {
-  //         this.listado = respuesta;
-  //       },
-  //       error: () => {
-  //         Swal.fire({
-  //           icon: 'error',
-  //           title: 'Oops...',
-  //           text: 'Error al conectar con la Api!',
-  //         });
-  //       },
-  //     })
-  //   );
-  // }
 
   actualizarArticulo(id: string) {
     this.router.navigate([]);

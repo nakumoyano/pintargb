@@ -31,7 +31,7 @@ export class LoginService {
               confirmButtonColor: '#3085d6',
               confirmButtonText: 'Aceptar',
             });
-            this.router.navigate(['/estadisticas']);
+            this.router.navigate(['/ayuda']);
           });
       });
   }

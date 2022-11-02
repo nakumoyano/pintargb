@@ -19,6 +19,26 @@
       "fechaCompra": "2022-11-23",
       "total": 2500,
       "id": 4
+    },
+    {
+      "estado": {},
+      "empleadoId": 7,
+      "tipoPagoId": 1,
+      "proveedorId": 3,
+      "estadoId": 2,
+      "fechaCompra": "2022-11-09",
+      "total": 10510,
+      "id": 5
+    },
+    {
+      "estado": {},
+      "empleadoId": 8,
+      "tipoPagoId": 2,
+      "proveedorId": 4,
+      "estadoId": 3,
+      "fechaCompra": "2022-11-23",
+      "total": 6000,
+      "id": 6
     }
   ],
   "detalleCompra": [

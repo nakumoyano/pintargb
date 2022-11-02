@@ -21,6 +21,8 @@ import Swal from 'sweetalert2';
 export class ComprasPorHacerComponent implements OnInit {
   @Input() compra: OrdenCompra;
 
+  filterpost = '';
+
   listado: OrdenCompra[];
 
   private subscription = new Subscription();

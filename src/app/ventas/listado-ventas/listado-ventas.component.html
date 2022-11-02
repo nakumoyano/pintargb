@@ -13,6 +13,24 @@
             </div>
           </div>
         </div>
+        <form action="">
+          <div class="form-group col-lg-8 px-0">
+            <div class="input-group my-3">
+              <div class="input-group-text bg-white">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Buscar venta"
+                name="filterpost"
+                id="txtFiltro"
+                autocomplete="on"
+                [(ngModel)]="filterpost"
+              />
+            </div>
+          </div>
+        </form>
         <table class="table table-striped table-hover" id="demo">
           <thead>
             <tr>
@@ -26,7 +44,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let venta of listado">
+            <tr *ngFor="let venta of listado | filtroVentas: filterpost">
               <td>{{ venta.empleados?.nombre }}</td>
               <td *ngIf="!venta.tipoPago?.tipo; else elseBlock">
                 Mercado pago

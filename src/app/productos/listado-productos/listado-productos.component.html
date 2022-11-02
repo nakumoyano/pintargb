@@ -13,6 +13,24 @@
             </div>
           </div>
         </div>
+        <form action="">
+          <div class="form-group col-lg-8 px-0">
+            <div class="input-group my-3">
+              <div class="input-group-text bg-white">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Buscar producto"
+                name="filterpost"
+                id="txtFiltro"
+                autocomplete="on"
+                [(ngModel)]="filterpost"
+              />
+            </div>
+          </div>
+        </form>
         <table class="table table-striped table-hover">
           <thead>
             <tr>
@@ -23,7 +41,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let producto of listado">
+            <tr *ngFor="let producto of listado | filtroProductos: filterpost">
               <td>{{ producto.nombre }}</td>
               <td>{{ producto.detalle }}</td>
               <td>{{ producto.stock }}</td>

@@ -7,6 +7,9 @@ import { Cliente } from '../models/cliente';
   providedIn: 'root',
 })
 export class ClienteService {
+  //tutorial yutu
+  // filtroCliente: '';
+  //------------
   private API_URL: string = 'http://localhost:3000/cliente';
 
   constructor(private http: HttpClient) {}
