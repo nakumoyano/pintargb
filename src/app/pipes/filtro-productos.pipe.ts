@@ -1,14 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filtroProductos',
+  name: 'filtroProducto',
 })
 export class FiltroProductosPipe implements PipeTransform {
   transform(value: any, arg: any): any {
     const resultPosts = [];
-    for (const post of value) {
-      if (post.nombre.indexOf(arg) > -1) {
-        resultPosts.push(post);
+    for (const producto of value) {
+      if (producto.stock.indexOf(arg) > -1) {
+        resultPosts.push(producto);
       }
     }
     return resultPosts;

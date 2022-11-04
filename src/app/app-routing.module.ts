@@ -116,34 +116,42 @@ const routes: Routes = [
   {
     path: 'nueva-compra',
     component: NuevaCompraComponent,
+    canActivate: [LoginGuardian],
   },
   {
     path: 'nueva-compra/:id',
     component: NuevaCompraComponent,
+    canActivate: [LoginGuardian],
   },
   {
     path: 'compras-por-hacer',
     component: ComprasPorHacerComponent,
+    canActivate: [LoginGuardian],
   },
   {
     path: 'reporte-compras',
     component: ReporteComprasComponent,
+    canActivate: [LoginGuardian],
   },
   {
     path: 'reporte-ventas',
     component: ReportesVentasComponent,
+    canActivate: [LoginGuardian],
   },
   {
     path: 'reporte-clientes',
     component: ReporteClientesComponent,
+    canActivate: [LoginGuardian],
   },
   {
     path: 'reporte-empleados',
     component: ReporteEmpleadosComponent,
+    canActivate: [LoginGuardian],
   },
   {
     path: 'reporte-proveedores',
     component: ReporteProveedoresComponent,
+    canActivate: [LoginGuardian],
   },
   { path: '**', component: ErrorComponent },
 ];

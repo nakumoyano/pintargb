@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  NgForm,
+  Validators,
+} from '@angular/forms';
 import { LoginService } from './login.service';
 import Swal from 'sweetalert2';
 
@@ -32,6 +38,7 @@ export class LoginComponent implements OnInit {
     } else {
       localStorage.setItem('userType', 'admin');
     }
+
     this.loginService.login(email, password);
   }
 

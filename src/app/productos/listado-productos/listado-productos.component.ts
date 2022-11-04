@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 export class ListadoProductosComponent implements OnInit {
   @Input() producto: Producto;
 
-  filterpost = '';
+  filterProducto = '';
 
   listado: Producto[];
 
