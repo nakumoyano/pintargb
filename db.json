@@ -2,26 +2,6 @@
   "ordenesCompra": [
     {
       "estado": {},
-      "empleadoId": 6,
-      "tipoPagoId": 1,
-      "proveedorId": 3,
-      "estadoId": 1,
-      "fechaCompra": "2022-10-30",
-      "total": 300,
-      "id": 3
-    },
-    {
-      "estado": {},
-      "empleadoId": 6,
-      "tipoPagoId": 1,
-      "proveedorId": 1,
-      "estadoId": 2,
-      "fechaCompra": "2022-11-23",
-      "total": 2500,
-      "id": 4
-    },
-    {
-      "estado": {},
       "empleadoId": 7,
       "tipoPagoId": 1,
       "proveedorId": 3,
@@ -42,23 +22,23 @@
     },
     {
       "estado": {},
-      "empleadoId": 9,
+      "empleadoId": 8,
       "tipoPagoId": 1,
-      "proveedorId": 3,
+      "proveedorId": 5,
       "estadoId": 1,
-      "fechaCompra": "2022-11-02",
-      "total": 3950,
-      "id": 7
+      "fechaCompra": "2022-11-06",
+      "total": 6500,
+      "id": 9
     },
     {
       "estado": {},
-      "empleadoId": 6,
-      "proveedorId": 1,
-      "fechaCompra": "2022-11-07",
-      "tipoPagoId": 1,
-      "estadoId": 2,
+      "empleadoId": 8,
+      "tipoPagoId": 2,
+      "proveedorId": 3,
+      "estadoId": 1,
+      "fechaCompra": "2022-11-06",
       "total": 6500,
-      "id": 8
+      "id": 10
     }
   ],
   "detalleCompra": [
@@ -186,6 +166,25 @@
       "fecha": "2022-11-02",
       "total": 6800,
       "id": 25
+    },
+    {
+      "productos": {},
+      "empleadoId": 6,
+      "clienteId": 11,
+      "productoId": 6,
+      "fecha": "2022-11-14",
+      "total": 1,
+      "id": 26
+    },
+    {
+      "productos": {},
+      "empleadoId": 7,
+      "clienteId": 4,
+      "productoId": 5,
+      "fecha": "2022-11-04",
+      "total": 3500,
+      "id": 27,
+      "tipoPagoId": 1
     }
   ],
   "detalleVenta": [
@@ -243,8 +242,9 @@
     },
     {
       "detalle": "Color amarillo opaco",
-      "stock": 10,
-      "id": 11
+      "stock": 12,
+      "id": 11,
+      "nombre": "Stanley"
     }
   ],
   "proveedor": [
@@ -324,20 +324,19 @@
       "metodoEnvioId": 3,
       "costoProveedor": 4200,
       "id": 8
+    },
+    {
+      "metodoEnvio": {},
+      "numIdentificaion": "51156",
+      "mail": "tomasmartinez@gmail.com",
+      "telefono": "3516254781",
+      "direccion": "Cordoba 45",
+      "metodoEnvioId": 1,
+      "costoProveedor": 7300,
+      "id": 9
     }
   ],
   "empleado": [
-    {
-      "rol": {},
-      "rolId": 2,
-      "nombre": "Facundo",
-      "apellido": "Gomez",
-      "mail": "facugomez@gmail.com",
-      "documento": "42456123",
-      "telefono": "3512645745",
-      "direccion": "Ayupanqca 75",
-      "id": 6
-    },
     {
       "rol": {},
       "nombre": "Loisa",
@@ -379,7 +378,7 @@
       "documento": "43156489",
       "telefono": "35478596412",
       "direccion": "Alvear 45",
-      "rolId": 2,
+      "rolId": 3,
       "id": 10
     },
     {
@@ -392,6 +391,28 @@
       "direccion": "Entre barrios 546",
       "rolId": 3,
       "id": 11
+    },
+    {
+      "rol": {},
+      "nombre": "Gino",
+      "apellido": "Soler",
+      "mail": "ginosoler@gmail.com",
+      "documento": "42156215",
+      "telefono": "351426444",
+      "direccion": "Entre rios 78",
+      "rolId": 1,
+      "id": 12
+    },
+    {
+      "rol": {},
+      "rolId": 2,
+      "nombre": "Nicolas",
+      "apellido": "Gutierrez",
+      "mail": "nicogutierrez@gmail.com",
+      "documento": "52145121",
+      "telefono": "3512547564",
+      "direccion": "Brasil 82",
+      "id": 13
     }
   ],
   "cliente": [
@@ -460,13 +481,22 @@
       "id": 10
     },
     {
-      "nombre": "Jose",
+      "nombre": "Nahuel",
       "apellido": "Guaymayen",
       "mail": "josesitoguay@gmail.com",
       "telefono": "3547462513",
       "direccion": "Tupan 58",
       "documento": "45008785",
       "id": 11
+    },
+    {
+      "nombre": "Hugo",
+      "apellido": "Gutierrez",
+      "mail": "hugogutierrez@gmail.com",
+      "telefono": "3547567271",
+      "direccion": "Av.Mayo 65",
+      "documento": "54121494",
+      "id": 12
     }
   ],
   "roles": [

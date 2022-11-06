@@ -149,7 +149,7 @@
         href="#homeSubmenu4"
         data-toggle="collapse"
         aria-expanded="false"
-        class="dropdown-toggle d-flex"
+        [ngClass]="visibleEDeposito ? 'd-none' : 'dropdown-toggle d-flex'"
       >
         <i class="fa-solid fa-user-tie"></i>Proveedores</a
       >
